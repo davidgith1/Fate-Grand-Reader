@@ -1,0 +1,4995 @@
+{
+  "id": 101,
+  "coordinates": [
+    [
+      48.84346,
+      4.608959
+    ],
+    []
+  ],
+  "age": "AD:1431",
+  "name": "First Singularity",
+  "originalName": "First Singularity",
+  "longName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+  "originalLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+  "flags": [
+    "withMap",
+    "mainScenario",
+    "isWarIconLeft"
+  ],
+  "banner": "https://static.atlasacademy.io/NA/Banner/questboard_cap101.png",
+  "headerImage": "https://static.atlasacademy.io/NA/Banner/img_title_header_6.png",
+  "priority": 101,
+  "parentWarId": 0,
+  "materialParentWarId": 0,
+  "parentBlankEarthSpotId": 0,
+  "emptyMessage": "No Quest Available",
+  "bgm": {
+    "id": 8,
+    "name": "Hundred Years' War of the Evil Dragons:\nOrleans",
+    "originalName": "Hundred Years' War of the Evil Dragons:\nOrleans",
+    "fileName": "BGM_MAP_2",
+    "notReleased": false,
+    "audioAsset": "https://static.atlasacademy.io/NA/Audio/Bgm/BGM_MAP_2/BGM_MAP_2.mp3"
+  },
+  "scriptId": "0100010010",
+  "script": "https://static.atlasacademy.io/NA/Script/01/0100010010.txt",
+  "startType": "script",
+  "targetId": 100010010,
+  "eventId": 0,
+  "eventName": "",
+  "lastQuestId": 1000115,
+  "releaseConditions": [],
+  "warAdds": [
+    {
+      "warId": 101,
+      "type": "parentWar",
+      "priority": 1,
+      "overwriteId": 11000,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1585281600,
+      "endedAt": 1893456000
+    },
+    {
+      "warId": 101,
+      "type": "materialParentWar",
+      "priority": 2,
+      "overwriteId": 11000,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1585281600,
+      "endedAt": 1893456000
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "questAfterClear": "close",
+      "questType": "main"
+    }
+  ],
+  "maps": [
+    {
+      "id": 101,
+      "mapImage": "https://static.atlasacademy.io/NA/Terminal/MapImgs/img_questmap_000101/img_questmap_000101.png",
+      "mapImageW": 1920,
+      "mapImageH": 1240,
+      "mapGimmicks": [],
+      "headerImage": "https://static.atlasacademy.io/NA/Banner/img_title_header_6.png",
+      "bgm": {
+        "id": 8,
+        "name": "Hundred Years' War of the Evil Dragons:\nOrleans",
+        "originalName": "Hundred Years' War of the Evil Dragons:\nOrleans",
+        "fileName": "BGM_MAP_2",
+        "notReleased": false,
+        "audioAsset": "https://static.atlasacademy.io/NA/Audio/Bgm/BGM_MAP_2/BGM_MAP_2.mp3"
+      }
+    }
+  ],
+  "spots": [
+    {
+      "id": 10101,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Domremy",
+      "originalName": "Domremy",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010101.png",
+      "x": 1413.0,
+      "y": 374.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -8,
+      "questOfsX": 37,
+      "questOfsY": -63,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000101,
+          "name": "Land of the Hundred Years' War",
+          "originalName": "Land of the Hundred Years' War",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 8,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "8",
+          "spotId": 10101,
+          "spotName": "Domremy",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310100,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310100,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310100,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310100,
+              "type": "item",
+              "objectId": 6503,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000011,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010110",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010110.txt"
+                },
+                {
+                  "scriptId": "0100010111",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010111.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899988,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000101,
+          "name": "Jeanne's Birthplace",
+          "originalName": "Jeanne's Birthplace",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "10",
+          "spotId": 10101,
+          "spotName": "Domremy",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000101,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499991,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10102,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Vaucouleurs",
+      "originalName": "Vaucouleurs",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010102.png",
+      "x": 1296.0,
+      "y": 322.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": -21,
+      "nameOfsY": -2,
+      "questOfsX": 39,
+      "questOfsY": -72,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000102,
+          "name": "Chase the French Soldier",
+          "originalName": "Chase the French Soldier",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 8,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "8",
+          "spotId": 10102,
+          "spotName": "Vaucouleurs",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310101,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310101,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310101,
+              "type": "item",
+              "objectId": 6512,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000101,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010210",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010210.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010220",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010220.txt"
+                },
+                {
+                  "scriptId": "0100010221",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010221.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899987,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000103,
+          "name": "Jeanne's Mystery",
+          "originalName": "Jeanne's Mystery",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 8,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "9",
+          "spotId": 10102,
+          "spotName": "Vaucouleurs",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 3,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310102,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310102,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310102,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310102,
+              "type": "item",
+              "objectId": 6512,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000102,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010310",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010310.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010320",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010320.txt"
+                },
+                {
+                  "scriptId": "0100010321",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010321.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899986,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91100802,
+          "name": "In Search of Das Rheingold",
+          "originalName": "In Search of Das Rheingold",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "70",
+          "spotId": 10102,
+          "spotName": "Vaucouleurs",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "questClear",
+              "targetId": 91100801,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 100800,
+              "value": 2,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 100800,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 100800,
+              "value": 4,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [
+            {
+              "questId": 91100802,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 1000115,
+              "condNum": 0,
+              "closedMessage": "Unlock by completing First Singularity & Stage 2 Ascension & Bond Level 4",
+              "overlayClosedMessage": "Unlock by completing preceding Interlude & First Singularity",
+              "eventId": 80376,
+              "startedAt": 1714622400,
+              "endedAt": 1718337599
+            },
+            {
+              "questId": 91100802,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 91100801,
+              "condNum": 0,
+              "closedMessage": "",
+              "overlayClosedMessage": "Unlock by completing preceding Interlude & First Singularity",
+              "eventId": 80376,
+              "startedAt": 1714622400,
+              "endedAt": 1718337599
+            }
+          ],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9110080210",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080210.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9110080220",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080220.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9110080230",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080230.txt"
+                },
+                {
+                  "scriptId": "9110080231",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080231.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 689918,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91701501,
+          "name": "Terror of the Bloodaxe",
+          "originalName": "Terror of the Bloodaxe",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "40",
+          "spotId": 10102,
+          "spotName": "Vaucouleurs",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 701500,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 701500,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 701500,
+              "value": 3,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9170150110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170150110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9170150120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170150120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9170150130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170150130.txt"
+                },
+                {
+                  "scriptId": "9170150131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170150131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 629849,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000102,
+          "name": "First Fortress",
+          "originalName": "First Fortress",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "10",
+          "spotId": 10102,
+          "spotName": "Vaucouleurs",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000103,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499990,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10103,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "La Charite",
+      "originalName": "La Charite",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010103.png",
+      "x": 1046.0,
+      "y": 517.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": 0,
+      "questOfsX": 39,
+      "questOfsY": -71,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000104,
+          "name": "Information Gathering",
+          "originalName": "Information Gathering",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 8,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "9",
+          "spotId": 10103,
+          "spotName": "La Charite",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 4,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310103,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310103,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310103,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310103,
+              "type": "item",
+              "objectId": 6512,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000103,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010410",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010410.txt"
+                },
+                {
+                  "scriptId": "0100010411",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010411.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010420",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010420.txt"
+                },
+                {
+                  "scriptId": "0100010421",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010421.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899985,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000105,
+          "name": "Dark Jeanne",
+          "originalName": "Dark Jeanne",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 9,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "10",
+          "spotId": 10103,
+          "spotName": "La Charite",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 5,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310104,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310104,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310104,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310104,
+              "type": "item",
+              "objectId": 6512,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000104,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010510",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010510.txt"
+                },
+                {
+                  "scriptId": "0100010511",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010511.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010520",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010520.txt"
+                },
+                {
+                  "scriptId": "0100010521",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010521.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100010530",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010530.txt"
+                },
+                {
+                  "scriptId": "0100010531",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010531.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100010540",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010540.txt"
+                },
+                {
+                  "scriptId": "0100010541",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010541.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899984,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91400201,
+          "name": "Conqueror of Life",
+          "originalName": "Conqueror of Life",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 18,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10103,
+          "spotName": "La Charite",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 400200,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9140020110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140020110.txt"
+                },
+                {
+                  "scriptId": "9140020111",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140020111.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 659979,
+          "noticeAt": 1483228800,
+          "openedAt": 1483228800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91500201,
+          "name": "Offering to the God",
+          "originalName": "Offering to the God",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "20",
+          "spotId": 10103,
+          "spotName": "La Charite",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 500200,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 500200,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 500200,
+              "value": 3,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9150020110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150020110.txt"
+                },
+                {
+                  "scriptId": "9150020111",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150020111.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 649979,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000103,
+          "name": "Loire Ridge",
+          "originalName": "Loire Ridge",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "10",
+          "spotId": 10103,
+          "spotName": "La Charite",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 3,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000105,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499989,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10104,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Jura",
+      "originalName": "Jura",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010104.png",
+      "x": 1326.0,
+      "y": 582.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -13,
+      "questOfsX": 39,
+      "questOfsY": -83,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000106,
+          "name": "One Thing After Another",
+          "originalName": "One Thing After Another",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 9,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "10",
+          "spotId": 10104,
+          "spotName": "Jura",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 6,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310105,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310105,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310105,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310105,
+              "type": "item",
+              "objectId": 7006,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000105,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010610",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010610.txt"
+                },
+                {
+                  "scriptId": "0100010611",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010611.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010620",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010620.txt"
+                },
+                {
+                  "scriptId": "0100010621",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010621.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100010630",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010630.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100010640",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010640.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0100010650",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010650.txt"
+                },
+                {
+                  "scriptId": "0100010651",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010651.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899983,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000104,
+          "name": "Primeval Forest",
+          "originalName": "Primeval Forest",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "12",
+          "spotId": 10104,
+          "spotName": "Jura",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 4,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000106,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499988,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10105,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Lyon",
+      "originalName": "Lyon",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010105.png",
+      "x": 1310.0,
+      "y": 785.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -1,
+      "questOfsX": 39,
+      "questOfsY": -72,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000107,
+          "name": "Search for the Dragon Slayer",
+          "originalName": "Search for the Dragon Slayer",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 9,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "11",
+          "spotId": 10105,
+          "spotName": "Lyon",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 7,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310106,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310106,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310106,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310106,
+              "type": "item",
+              "objectId": 6503,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000106,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010710",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010710.txt"
+                },
+                {
+                  "scriptId": "0100010711",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010711.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010720",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010720.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100010730",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010730.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100010740",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010740.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0100010750",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010750.txt"
+                },
+                {
+                  "scriptId": "0100010751",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010751.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899982,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000108,
+          "name": "Attack of the Giant Dragon",
+          "originalName": "Attack of the Giant Dragon",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "13",
+          "spotId": 10105,
+          "spotName": "Lyon",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 8,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310107,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310107,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310107,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310107,
+              "type": "item",
+              "objectId": 6503,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000107,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010810",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010810.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010820",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010820.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100010830",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010830.txt"
+                },
+                {
+                  "scriptId": "0100010831",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010831.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100010840",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010840.txt"
+                },
+                {
+                  "scriptId": "0100010841",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010841.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899981,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91100801,
+          "name": "Dragon Slayer",
+          "originalName": "Dragon Slayer",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10105,
+          "spotName": "Lyon",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 100800,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 100800,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 100800,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [
+            {
+              "questId": 91100801,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 1000115,
+              "condNum": 0,
+              "closedMessage": "Unlock by completing First Singularity & Stage 1 Ascension & Bond Level 2",
+              "overlayClosedMessage": "Unlock by completing First Singularity",
+              "eventId": 80376,
+              "startedAt": 1714622400,
+              "endedAt": 1718337599
+            }
+          ],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9110080110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9110080120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9110080130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080130.txt"
+                },
+                {
+                  "scriptId": "9110080131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110080131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 689919,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91700101,
+          "name": "Oath of Heracles",
+          "originalName": "Oath of Heracles",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "50",
+          "spotId": 10105,
+          "spotName": "Lyon",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000011,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 700100,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 700100,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 700100,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9170010110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170010110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9170010120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170010120.txt"
+                },
+                {
+                  "scriptId": "9170010121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170010121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 629989,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000105,
+          "name": "Town of the Dead",
+          "originalName": "Town of the Dead",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "12",
+          "spotId": 10105,
+          "spotName": "Lyon",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 5,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000108,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499987,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10106,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Thiers",
+      "originalName": "Thiers",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010106.png",
+      "x": 887.0,
+      "y": 697.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -7,
+      "questOfsX": 38,
+      "questOfsY": -74,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000110,
+          "name": "Saint",
+          "originalName": "Saint",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "13",
+          "spotId": 10106,
+          "spotName": "Thiers",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 10,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310109,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310109,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310109,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310109,
+              "type": "item",
+              "objectId": 6502,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000109,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100011010",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011010.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100011020",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011020.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100011030",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011030.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100011040",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011040.txt"
+                },
+                {
+                  "scriptId": "0100011041",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011041.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0100011050",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011050.txt"
+                },
+                {
+                  "scriptId": "0100011051",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011051.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899979,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000111,
+          "name": "Baptism Rite",
+          "originalName": "Baptism Rite",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "13",
+          "spotId": 10106,
+          "spotName": "Thiers",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 11,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310110,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310110,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310110,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310110,
+              "type": "item",
+              "objectId": 6502,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000110,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100011110",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011110.txt"
+                },
+                {
+                  "scriptId": "0100011111",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011111.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100011120",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011120.txt"
+                },
+                {
+                  "scriptId": "0100011121",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011121.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100011130",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011130.txt"
+                },
+                {
+                  "scriptId": "0100011131",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011131.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100011141",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011141.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899978,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91200301,
+          "name": "Hunter of the Forest",
+          "originalName": "Hunter of the Forest",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "20",
+          "spotId": 10106,
+          "spotName": "Thiers",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000011,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 200300,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 200300,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 200300,
+              "value": 3,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9120030110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120030110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9120030120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120030120.txt"
+                },
+                {
+                  "scriptId": "9120030121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120030121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 679969,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91501501,
+          "name": "Symphony of the Heroic Spirits",
+          "originalName": "Symphony of the Heroic Spirits",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "35",
+          "spotId": 10106,
+          "spotName": "Thiers",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 501500,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 501500,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 501500,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9150150110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150150110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9150150120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150150120.txt"
+                },
+                {
+                  "scriptId": "9150150121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150150121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 649849,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000106,
+          "name": "Town of Blades",
+          "originalName": "Town of Blades",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "12",
+          "spotId": 10106,
+          "spotName": "Thiers",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 6,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000111,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499986,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10107,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Orleans",
+      "originalName": "Orleans",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010107.png",
+      "x": 755.0,
+      "y": 403.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": 4,
+      "questOfsX": 43,
+      "questOfsY": -85,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000114,
+          "name": "Chase After Jeanne Alter",
+          "originalName": "Chase After Jeanne Alter",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "15",
+          "spotId": 10107,
+          "spotName": "Orleans",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 14,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310113,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310113,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310113,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310113,
+              "type": "item",
+              "objectId": 6512,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000113,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100011410",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011410.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100011420",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011420.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100011430",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011430.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100011440",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011440.txt"
+                },
+                {
+                  "scriptId": "0100011441",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011441.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899975,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000115,
+          "name": "The Dragon Witch",
+          "originalName": "The Dragon Witch",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 11,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "17",
+          "spotId": 10107,
+          "spotName": "Orleans",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 15,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/3.png",
+          "gifts": [
+            {
+              "id": 310114,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 10,
+              "giftAdds": []
+            },
+            {
+              "id": 310114,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310114,
+              "type": "item",
+              "objectId": 6517,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310114,
+              "type": "item",
+              "objectId": 7999,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000114,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100011510",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011510.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100011520",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011520.txt"
+                },
+                {
+                  "scriptId": "0100011521",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011521.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100011530",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011530.txt"
+                },
+                {
+                  "scriptId": "0100011531",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011531.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899974,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91102201,
+          "name": "Sword of the Saint",
+          "originalName": "Sword of the Saint",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10107,
+          "spotName": "Orleans",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 102200,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 102200,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 102200,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [
+            {
+              "questId": 91102201,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 1000115,
+              "condNum": 0,
+              "closedMessage": "Unlock by completing First Singularity & Stage 1 Ascension & Bond Level 2",
+              "overlayClosedMessage": "Unlock by completing First Singularity",
+              "eventId": 80470,
+              "startedAt": 1771387200,
+              "endedAt": 1772596799
+            }
+          ],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9110220110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110220110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9110220120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110220120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9110220130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110220130.txt"
+                },
+                {
+                  "scriptId": "9110220131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110220131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 689779,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000107,
+          "name": "Fateful Fortress",
+          "originalName": "Fateful Fortress",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 8,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "14",
+          "spotId": 10107,
+          "spotName": "Orleans",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 7,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499985,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10108,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Paris",
+      "originalName": "Paris",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010108.png",
+      "x": 888.0,
+      "y": 248.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": 2,
+      "questOfsX": 41,
+      "questOfsY": -73,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 91102601,
+          "name": "In the Name of Lily",
+          "originalName": "In the Name of Lily",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "80",
+          "spotId": 10108,
+          "spotName": "Paris",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 102600,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 102600,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 102600,
+              "value": 1,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9110260110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110260110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9110260120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110260120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9110260130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110260130.txt"
+                },
+                {
+                  "scriptId": "9110260131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110260131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 689739,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91200901,
+          "name": "Unsweet Honeymoon",
+          "originalName": "Unsweet Honeymoon",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 18,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10108,
+          "spotName": "Paris",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 200900,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 200900,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 200900,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9120090110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120090110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9120090120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120090120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9120090130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120090130.txt"
+                },
+                {
+                  "scriptId": "9120090131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120090131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 679909,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91601301,
+          "name": "Christine's Call",
+          "originalName": "Christine's Call",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 14,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "35",
+          "spotId": 10108,
+          "spotName": "Paris",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/8.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000011,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 601300,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 601300,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 601300,
+              "value": 3,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9160130110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9160130110.txt"
+                },
+                {
+                  "scriptId": "9160130111",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9160130111.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 639869,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000108,
+          "name": "City of Art",
+          "originalName": "City of Art",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 13,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "30",
+          "spotId": 10108,
+          "spotName": "Paris",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 8,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499984,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10109,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Marseille",
+      "originalName": "Marseille",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010109.png",
+      "x": 1469.0,
+      "y": 946.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -1,
+      "questOfsX": 38,
+      "questOfsY": -70,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 91100301,
+          "name": "Sword of a Young Flower",
+          "originalName": "Sword of a Young Flower",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "20",
+          "spotId": 10109,
+          "spotName": "Marseille",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000011,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 100300,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 100300,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 100300,
+              "value": 1,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9110030110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110030110.txt"
+                },
+                {
+                  "scriptId": "9110030111",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9110030111.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 689969,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91401901,
+          "name": "Saint of the Dragon and Sea",
+          "originalName": "Saint of the Dragon and Sea",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "70",
+          "spotId": 10109,
+          "spotName": "Marseille",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 401900,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 401900,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 401900,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9140190110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140190110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9140190120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140190120.txt"
+                },
+                {
+                  "scriptId": "9140190121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140190121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 659809,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91601401,
+          "name": "Meltdown Lover",
+          "originalName": "Meltdown Lover",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "50",
+          "spotId": 10109,
+          "spotName": "Marseille",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000011,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 601400,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 601400,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 601400,
+              "value": 1,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9160140110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9160140110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9160140120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9160140120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9160140130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9160140130.txt"
+                },
+                {
+                  "scriptId": "9160140131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9160140131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 639859,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91701301,
+          "name": "Lips to Lips",
+          "originalName": "Lips to Lips",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "40",
+          "spotId": 10109,
+          "spotName": "Marseille",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 701300,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 701300,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 701300,
+              "value": 1,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [
+            {
+              "questId": 91701301,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 1000115,
+              "condNum": 0,
+              "closedMessage": "Unlock by completing First Singularity & Stage 1 Ascension & Bond Level 1",
+              "overlayClosedMessage": "Unlock by completing First Singularity",
+              "eventId": 80376,
+              "startedAt": 1714622400,
+              "endedAt": 1718337599
+            }
+          ],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9170130110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170130110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9170130120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170130120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9170130130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170130130.txt"
+                },
+                {
+                  "scriptId": "9170130131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170130131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 629869,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000109,
+          "name": "Facing the Mediterranean Sea",
+          "originalName": "Facing the Mediterranean Sea",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "12",
+          "spotId": 10109,
+          "spotName": "Marseille",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 9,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000108,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499983,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10110,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Bordeaux",
+      "originalName": "Bordeaux",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010110.png",
+      "x": 464.0,
+      "y": 821.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -7,
+      "questOfsX": 38,
+      "questOfsY": -75,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 91300401,
+          "name": "Heroic Spirit of the Charity",
+          "originalName": "Heroic Spirit of the Charity",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 18,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10110,
+          "spotName": "Bordeaux",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 300400,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 300400,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 300400,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [
+            {
+              "questId": 91300401,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 1000314,
+              "condNum": 0,
+              "closedMessage": "Unlock by completing Third Singularity & Stage 1 Ascension & Bond Level 2",
+              "overlayClosedMessage": "Unlock by completing Third Singularity",
+              "eventId": 80398,
+              "startedAt": 1724040000,
+              "endedAt": 1724644799
+            }
+          ],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9130040110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9130040110.txt"
+                },
+                {
+                  "scriptId": "9130040111",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9130040111.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 669959,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91400101,
+          "name": "Gorgon's Bride",
+          "originalName": "Gorgon's Bride",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "20",
+          "spotId": 10110,
+          "spotName": "Bordeaux",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000011,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 400100,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 400100,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 400100,
+              "value": 4,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9140010110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140010110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9140010120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140010120.txt"
+                },
+                {
+                  "scriptId": "9140010121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140010121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 659989,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91400902,
+          "name": "Treasure of the Knights Templar!",
+          "originalName": "Treasure of the Knights Templar!",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 18,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10110,
+          "spotName": "Bordeaux",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 80001,
+              "type": "item",
+              "objectId": 1,
+              "priority": 0,
+              "num": 10000000,
+              "giftAdds": []
+            },
+            {
+              "id": 80001,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000632,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "questClear",
+              "targetId": 91400901,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 400900,
+              "value": 2,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 400900,
+              "value": 4,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9140090210",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090210.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9140090220",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090220.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9140090230",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090230.txt"
+                },
+                {
+                  "scriptId": "9140090231",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090231.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 659908,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91700201,
+          "name": "Knight of Owner",
+          "originalName": "Knight of Owner",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "40",
+          "spotId": 10110,
+          "spotName": "Bordeaux",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000115,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 700200,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 700200,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 700200,
+              "value": 3,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9170020110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170020110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9170020120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170020120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9170020130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170020130.txt"
+                },
+                {
+                  "scriptId": "9170020131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9170020131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 629979,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000110,
+          "name": "A Toast with Wine",
+          "originalName": "A Toast with Wine",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 7,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "12",
+          "spotId": 10110,
+          "spotName": "Bordeaux",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 10,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000111,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499982,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10150,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Abandoned Fort",
+      "originalName": "Abandoned Fort",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010150.png",
+      "x": 1073.0,
+      "y": 737.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -6,
+      "questOfsX": 37,
+      "questOfsY": -48,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000109,
+          "name": "Pause",
+          "originalName": "Pause",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 9,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "12",
+          "spotId": 10150,
+          "spotName": "Abandoned Fort",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 9,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310108,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310108,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310108,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310108,
+              "type": "item",
+              "objectId": 6502,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000108,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100010910",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010910.txt"
+                },
+                {
+                  "scriptId": "0100010911",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010911.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100010920",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010920.txt"
+                },
+                {
+                  "scriptId": "0100010921",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100010921.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899980,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10151,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 101,
+      "name": "Battleground Hill",
+      "originalName": "Battleground Hill",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/spot_010151.png",
+      "x": 820.0,
+      "y": 547.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -7,
+      "questOfsX": 38,
+      "questOfsY": -49,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000112,
+          "name": "March to the Orleans",
+          "originalName": "March to the Orleans",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "14",
+          "spotId": 10151,
+          "spotName": "Battleground Hill",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 12,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310111,
+              "type": "servant",
+              "objectId": 9770400,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310111,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310111,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310111,
+              "type": "item",
+              "objectId": 6512,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000111,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100011210",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011210.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100011220",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011220.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100011230",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011230.txt"
+                },
+                {
+                  "scriptId": "0100011231",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011231.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899977,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000113,
+          "name": "Jeanne and Jeanne",
+          "originalName": "Jeanne and Jeanne",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 10,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "14",
+          "spotId": 10151,
+          "spotName": "Battleground Hill",
+          "warId": 101,
+          "warLongName": "First Singularity\nHundred Years' War of the Evil Dragons: Orleans",
+          "chapterId": 1,
+          "chapterSubId": 13,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310112,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310112,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310112,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310112,
+              "type": "item",
+              "objectId": 6506,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000112,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100011310",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011310.txt"
+                },
+                {
+                  "scriptId": "0100011311",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011311.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100011320",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011320.txt"
+                },
+                {
+                  "scriptId": "0100011321",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011321.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100011330",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011330.txt"
+                },
+                {
+                  "scriptId": "0100011331",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011331.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100011340",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011340.txt"
+                },
+                {
+                  "scriptId": "0100011341",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100011341.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899976,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    }
+  ],
+  "spotRoads": [
+    {
+      "id": 10101,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10101,
+      "dstSpotId": 10102,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000101,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10102,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10102,
+      "dstSpotId": 10103,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000103,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10103,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10103,
+      "dstSpotId": 10107,
+      "dispCondType": "useItemEternity",
+      "dispTargetId": 1000105,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "useItemTime",
+      "activeTargetId": 0,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10104,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10103,
+      "dstSpotId": 10104,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000105,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000105,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10105,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10104,
+      "dstSpotId": 10105,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000106,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10106,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10105,
+      "dstSpotId": 10109,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000108,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10107,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10105,
+      "dstSpotId": 10150,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000108,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10108,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10150,
+      "dstSpotId": 10106,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000109,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10109,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10106,
+      "dstSpotId": 10110,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000111,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10110,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10106,
+      "dstSpotId": 10151,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000111,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10111,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10151,
+      "dstSpotId": 10107,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000113,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10112,
+      "warId": 101,
+      "mapId": 101,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0101/QMap_Cap0101_Atlas/img_road0101_00.png",
+      "srcSpotId": 10107,
+      "dstSpotId": 10108,
+      "dispCondType": "questClear",
+      "dispTargetId": 0,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000115,
+      "activeTargetValue": 0
+    }
+  ],
+  "questSelections": []
+}

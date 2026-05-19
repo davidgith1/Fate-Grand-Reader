@@ -1,0 +1,4038 @@
+{
+  "id": 103,
+  "coordinates": [
+    [
+      25.26317,
+      -37.37087
+    ],
+    []
+  ],
+  "age": "AD:1573",
+  "name": "Third Singularity",
+  "originalName": "Third Singularity",
+  "longName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+  "originalLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+  "flags": [
+    "withMap",
+    "mainScenario",
+    "isWarIconLeft"
+  ],
+  "banner": "https://static.atlasacademy.io/NA/Banner/questboard_cap103.png",
+  "headerImage": "https://static.atlasacademy.io/NA/Banner/img_title_header_8.png",
+  "priority": 103,
+  "parentWarId": 0,
+  "materialParentWarId": 0,
+  "parentBlankEarthSpotId": 0,
+  "emptyMessage": "No Quest Available",
+  "bgm": {
+    "id": 24,
+    "name": "Sealed Ends of the Four Seas:\nOkeanos",
+    "originalName": "Sealed Ends of the Four Seas:\nOkeanos",
+    "fileName": "BGM_MAP_5",
+    "notReleased": false,
+    "audioAsset": "https://static.atlasacademy.io/NA/Audio/Bgm/BGM_MAP_5/BGM_MAP_5.mp3"
+  },
+  "scriptId": "0100030010",
+  "script": "https://static.atlasacademy.io/NA/Script/01/0100030010.txt",
+  "startType": "script",
+  "targetId": 100030010,
+  "eventId": 0,
+  "eventName": "",
+  "lastQuestId": 1000314,
+  "releaseConditions": [],
+  "warAdds": [
+    {
+      "warId": 103,
+      "type": "parentWar",
+      "priority": 1,
+      "overwriteId": 11000,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1585281600,
+      "endedAt": 1893456000
+    },
+    {
+      "warId": 103,
+      "type": "materialParentWar",
+      "priority": 2,
+      "overwriteId": 11000,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1585281600,
+      "endedAt": 1893456000
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "questAfterClear": "close",
+      "questType": "main"
+    }
+  ],
+  "maps": [
+    {
+      "id": 103,
+      "mapImage": "https://static.atlasacademy.io/NA/Terminal/MapImgs/img_questmap_000103/img_questmap_000103.png",
+      "mapImageW": 1920,
+      "mapImageH": 1240,
+      "mapGimmicks": [
+        {
+          "id": 10301,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010301.png",
+          "x": 960,
+          "y": 620,
+          "depthOffset": 100,
+          "scale": 2000,
+          "dispCondType": "questClear",
+          "dispTargetId": 0,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10302,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010302.png",
+          "x": 1468,
+          "y": 926,
+          "depthOffset": 1,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000301,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10303,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010303.png",
+          "x": 1655,
+          "y": 700,
+          "depthOffset": 2,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000302,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10304,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010304.png",
+          "x": 1325,
+          "y": 336,
+          "depthOffset": 3,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000303,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10305,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010305.png",
+          "x": 1268,
+          "y": 308,
+          "depthOffset": 4,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000304,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10306,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010306.png",
+          "x": 545,
+          "y": 225,
+          "depthOffset": 5,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000305,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10307,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010307.png",
+          "x": 314,
+          "y": 448,
+          "depthOffset": 6,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000306,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10308,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010308.png",
+          "x": 741,
+          "y": 669,
+          "depthOffset": 7,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000308,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10309,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010309.png",
+          "x": 309,
+          "y": 910,
+          "depthOffset": 8,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 1000310,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        },
+        {
+          "id": 10310,
+          "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/gimmick_010310.png",
+          "x": 661,
+          "y": 1019,
+          "depthOffset": 9,
+          "scale": 2000,
+          "dispCondType": "useItemEternity",
+          "dispTargetId": 93000308,
+          "dispTargetValue": 0,
+          "dispCondType2": "questClear",
+          "dispTargetId2": 0,
+          "dispTargetValue2": 0,
+          "actionAnimTime": -1,
+          "actionEffectId": 0,
+          "startedAt": 946684800,
+          "endedAt": 1893456000
+        }
+      ],
+      "headerImage": "https://static.atlasacademy.io/NA/Banner/img_title_header_8.png",
+      "bgm": {
+        "id": 24,
+        "name": "Sealed Ends of the Four Seas:\nOkeanos",
+        "originalName": "Sealed Ends of the Four Seas:\nOkeanos",
+        "fileName": "BGM_MAP_5",
+        "notReleased": false,
+        "audioAsset": "https://static.atlasacademy.io/NA/Audio/Bgm/BGM_MAP_5/BGM_MAP_5.mp3"
+      }
+    }
+  ],
+  "spots": [
+    {
+      "id": 10301,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Pirate Ship",
+      "originalName": "Pirate Ship",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010301.png",
+      "x": 1106.0,
+      "y": 959.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -12,
+      "questOfsX": 36,
+      "questOfsY": -81,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000301,
+          "name": "Pirates of Chaldea",
+          "originalName": "Pirates of Chaldea",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 13,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "25",
+          "spotId": 10301,
+          "spotName": "Pirate Ship",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310300,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310300,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310300,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310300,
+              "type": "item",
+              "objectId": 6509,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000215,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030110",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030110.txt"
+                },
+                {
+                  "scriptId": "0100030111",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030111.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899958,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000301,
+          "name": "Band of Corsairs",
+          "originalName": "Band of Corsairs",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 12,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "28",
+          "spotId": 10301,
+          "spotName": "Pirate Ship",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000301,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499970,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10302,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Pirate Island",
+      "originalName": "Pirate Island",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010302.png",
+      "x": 1370.0,
+      "y": 913.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -6,
+      "questOfsX": 38,
+      "questOfsY": -69,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000302,
+          "name": "Pioneering Pirate Queen",
+          "originalName": "Pioneering Pirate Queen",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 13,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "25",
+          "spotId": 10302,
+          "spotName": "Pirate Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310301,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310301,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310301,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310301,
+              "type": "item",
+              "objectId": 6509,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000301,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030210",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030210.txt"
+                },
+                {
+                  "scriptId": "0100030211",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030211.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030220",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030220.txt"
+                },
+                {
+                  "scriptId": "0100030221",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030221.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030230",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030230.txt"
+                },
+                {
+                  "scriptId": "0100030231",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030231.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899957,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91400801,
+          "name": "A Man's Battle",
+          "originalName": "A Man's Battle",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 14,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "35",
+          "spotId": 10302,
+          "spotName": "Pirate Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 201,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 400800,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 400800,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 400800,
+              "value": 1,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9140080110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140080110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9140080120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140080120.txt"
+                },
+                {
+                  "scriptId": "9140080121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140080121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 659919,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000302,
+          "name": "Pirate Hideout",
+          "originalName": "Pirate Hideout",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 13,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "30",
+          "spotId": 10302,
+          "spotName": "Pirate Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000302,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499969,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10303,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "King's Abode Island",
+      "originalName": "King's Abode Island",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010303.png",
+      "x": 1632.0,
+      "y": 675.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -9,
+      "questOfsX": 38,
+      "questOfsY": -82,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000303,
+          "name": "Ghost Ship and New Island",
+          "originalName": "Ghost Ship and New Island",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 14,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "28",
+          "spotId": 10303,
+          "spotName": "King's Abode Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 3,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310302,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310302,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310302,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310302,
+              "type": "item",
+              "objectId": 6513,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000302,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030310",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030310.txt"
+                },
+                {
+                  "scriptId": "0100030311",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030311.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030320",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030320.txt"
+                },
+                {
+                  "scriptId": "0100030321",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030321.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030330",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030330.txt"
+                },
+                {
+                  "scriptId": "0100030331",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030331.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899956,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91501902,
+          "name": "Endless Sea",
+          "originalName": "Endless Sea",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 20,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "70",
+          "spotId": 10303,
+          "spotName": "King's Abode Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 90008,
+              "type": "servant",
+              "objectId": 9400460,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 90008,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "questClear",
+              "targetId": 91501901,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 501900,
+              "value": 2,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 501900,
+              "value": 4,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9150190210",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150190210.txt"
+                },
+                {
+                  "scriptId": "9150190211",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150190211.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 649808,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000303,
+          "name": "Cursed Pirates",
+          "originalName": "Cursed Pirates",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 13,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "32",
+          "spotId": 10303,
+          "spotName": "King's Abode Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 3,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000303,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499968,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10304,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Mapped Island",
+      "originalName": "Mapped Island",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010304.png",
+      "x": 1283.0,
+      "y": 321.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -11,
+      "questOfsX": 36,
+      "questOfsY": -67,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000304,
+          "name": "Lightning and Goddess",
+          "originalName": "Lightning and Goddess",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 14,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "28",
+          "spotId": 10304,
+          "spotName": "Mapped Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 4,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310303,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310303,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310303,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310303,
+              "type": "item",
+              "objectId": 7004,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000303,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030410",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030410.txt"
+                },
+                {
+                  "scriptId": "0100030411",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030411.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030420",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030420.txt"
+                },
+                {
+                  "scriptId": "0100030421",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030421.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030430",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030430.txt"
+                },
+                {
+                  "scriptId": "0100030431",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030431.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100030440",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030440.txt"
+                },
+                {
+                  "scriptId": "0100030441",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030441.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0100030450",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030450.txt"
+                },
+                {
+                  "scriptId": "0100030451",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030451.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899955,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91201801,
+          "name": "How to Love a Wild Flower",
+          "originalName": "How to Love a Wild Flower",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 18,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10304,
+          "spotName": "Mapped Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/8.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000413,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 201800,
+              "value": 3,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 201800,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 201800,
+              "value": 5,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9120180110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120180110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9120180120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120180120.txt"
+                },
+                {
+                  "scriptId": "9120180121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120180121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 679819,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91401501,
+          "name": "The Beginning of a Trampling Conquest",
+          "originalName": "The Beginning of a Trampling Conquest",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 17,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "50",
+          "spotId": 10304,
+          "spotName": "Mapped Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/8.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 401500,
+              "value": 2,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 401500,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 401500,
+              "value": 4,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9140150110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140150110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9140150120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140150120.txt"
+                },
+                {
+                  "scriptId": "9140150121",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140150121.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 659849,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000304,
+          "name": "Minotaur's Maze",
+          "originalName": "Minotaur's Maze",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 13,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "32",
+          "spotId": 10304,
+          "spotName": "Mapped Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 4,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000304,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499967,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10305,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Two-Current Sea",
+      "originalName": "Two-Current Sea",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010305.png",
+      "x": 849.0,
+      "y": 327.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -2,
+      "questOfsX": 38,
+      "questOfsY": -57,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000305,
+          "name": "Blackbeard's Misery",
+          "originalName": "Blackbeard's Misery",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "30",
+          "spotId": 10305,
+          "spotName": "Two-Current Sea",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 5,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310304,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310304,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310304,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310304,
+              "type": "item",
+              "objectId": 6513,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000304,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030510",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030510.txt"
+                },
+                {
+                  "scriptId": "0100030511",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030511.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030520",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030520.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030530",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030530.txt"
+                },
+                {
+                  "scriptId": "0100030531",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030531.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100030540",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030540.txt"
+                },
+                {
+                  "scriptId": "0100030541",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030541.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899954,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000307,
+          "name": "Queen Anne's Revenge",
+          "originalName": "Queen Anne's Revenge",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "30",
+          "spotId": 10305,
+          "spotName": "Two-Current Sea",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 7,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310306,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310306,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310306,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310306,
+              "type": "item",
+              "objectId": 6509,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000306,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030710",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030710.txt"
+                },
+                {
+                  "scriptId": "0100030711",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030711.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030720",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030720.txt"
+                },
+                {
+                  "scriptId": "0100030721",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030721.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030730",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030730.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899952,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000308,
+          "name": "Desperate Battle",
+          "originalName": "Desperate Battle",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "32",
+          "spotId": 10305,
+          "spotName": "Two-Current Sea",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 8,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310307,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310307,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310307,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310307,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000307,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030810",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030810.txt"
+                },
+                {
+                  "scriptId": "0100030811",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030811.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030820",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030820.txt"
+                },
+                {
+                  "scriptId": "0100030821",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030821.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030830",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030830.txt"
+                },
+                {
+                  "scriptId": "0100030831",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030831.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899951,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000305,
+          "name": "Sea of Freedom",
+          "originalName": "Sea of Freedom",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 14,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "36",
+          "spotId": 10305,
+          "spotName": "Two-Current Sea",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 5,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000305,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499966,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10306,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Island of Wyverns",
+      "originalName": "Island of Wyverns",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010306.png",
+      "x": 535.0,
+      "y": 244.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -7,
+      "questOfsX": 40,
+      "questOfsY": -79,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000306,
+          "name": "Hunter of the Three Stars",
+          "originalName": "Hunter of the Three Stars",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "30",
+          "spotId": 10306,
+          "spotName": "Island of Wyverns",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 6,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310305,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310305,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310305,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 310305,
+              "type": "item",
+              "objectId": 6506,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000305,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030610",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030610.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030620",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030620.txt"
+                },
+                {
+                  "scriptId": "0100030621",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030621.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030630",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030630.txt"
+                },
+                {
+                  "scriptId": "0100030631",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030631.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100030640",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030640.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0100030650",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030650.txt"
+                },
+                {
+                  "scriptId": "0100030651",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030651.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899953,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91200203,
+          "name": "Law of Heaven",
+          "originalName": "Law of Heaven",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 21,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "80",
+          "spotId": 10306,
+          "spotName": "Island of Wyverns",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 3,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/9.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000522,
+              "value": 0,
+              "closedMessage": "Unlock by completing Fifth Singularity & Stage 3 Ascension & Bond Level 5"
+            },
+            {
+              "type": "questClear",
+              "targetId": 91200202,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 200200,
+              "value": 3,
+              "closedMessage": "Unlock by completing Fifth Singularity & Stage 3 Ascension & Bond Level 5"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 200200,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 200200,
+              "value": 5,
+              "closedMessage": "Unlock by completing Fifth Singularity & Stage 3 Ascension & Bond Level 5"
+            }
+          ],
+          "releaseOverwrites": [
+            {
+              "questId": 91200203,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 1000522,
+              "condNum": 0,
+              "closedMessage": "Unlock by completing Fifth Singularity & Stage 3 Ascension & Bond Level 5",
+              "overlayClosedMessage": "Unlock by completing Fifth Singularity",
+              "eventId": 80446,
+              "startedAt": 1695891600,
+              "endedAt": 1696478399
+            },
+            {
+              "questId": 91200203,
+              "priority": 1,
+              "condType": "questClear",
+              "condId": 91200202,
+              "condNum": 0,
+              "closedMessage": "",
+              "overlayClosedMessage": "Unlock by completing preceding Interlude & Fifth Singularity",
+              "eventId": 80446,
+              "startedAt": 1695891600,
+              "endedAt": 1696478399
+            }
+          ],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9120020310",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120020310.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9120020320",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120020320.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9120020330",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120020330.txt"
+                },
+                {
+                  "scriptId": "9120020331",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120020331.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 679977,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91501701,
+          "name": "Close Friend of a Witch",
+          "originalName": "Close Friend of a Witch",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 17,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "50",
+          "spotId": 10306,
+          "spotName": "Island of Wyverns",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/8.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 501700,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 501700,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 501700,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9150170110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150170110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9150170120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150170120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9150170130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150170130.txt"
+                },
+                {
+                  "scriptId": "9150170131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150170131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 649829,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000306,
+          "name": "Dragon Paradise",
+          "originalName": "Dragon Paradise",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 14,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "38",
+          "spotId": 10306,
+          "spotName": "Island of Wyverns",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 6,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000306,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499965,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10307,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Stormy Seas",
+      "originalName": "Stormy Seas",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010307.png",
+      "x": 724.0,
+      "y": 651.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -10,
+      "questOfsX": 44,
+      "questOfsY": -64,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000309,
+          "name": "Tracks Down the Dandies",
+          "originalName": "Tracks Down the Dandies",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "32",
+          "spotId": 10307,
+          "spotName": "Stormy Seas",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 9,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310308,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310308,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310308,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310308,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000308,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100030910",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030910.txt"
+                },
+                {
+                  "scriptId": "0100030911",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030911.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100030920",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030920.txt"
+                },
+                {
+                  "scriptId": "0100030921",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030921.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100030930",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030930.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100030940",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030940.txt"
+                },
+                {
+                  "scriptId": "0100030941",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100030941.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899950,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000310,
+          "name": "World's Oldest Pirate Ship",
+          "originalName": "World's Oldest Pirate Ship",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 16,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "35",
+          "spotId": 10307,
+          "spotName": "Stormy Seas",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 10,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310309,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310309,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310309,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310309,
+              "type": "item",
+              "objectId": 6509,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000309,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100031010",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031010.txt"
+                },
+                {
+                  "scriptId": "0100031011",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031011.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100031020",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031020.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100031030",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031030.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100031040",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031040.txt"
+                },
+                {
+                  "scriptId": "0100031041",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031041.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0100031050",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031050.txt"
+                },
+                {
+                  "scriptId": "0100031051",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031051.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899949,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000307,
+          "name": "Wandering Ghost Ship",
+          "originalName": "Wandering Ghost Ship",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "40",
+          "spotId": 10307,
+          "spotName": "Stormy Seas",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 7,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000310,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499964,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10308,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Archipelago",
+      "originalName": "Archipelago",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010308.png",
+      "x": 301.0,
+      "y": 804.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -11,
+      "questOfsX": 38,
+      "questOfsY": -81,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 1000311,
+          "name": "Lost Ark of the Covenant",
+          "originalName": "Lost Ark of the Covenant",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 16,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "35",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 11,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310310,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310310,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310310,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310310,
+              "type": "item",
+              "objectId": 6526,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000310,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100031110",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031110.txt"
+                },
+                {
+                  "scriptId": "0100031111",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031111.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100031121",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031121.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100031131",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031131.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100031140",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031140.txt"
+                },
+                {
+                  "scriptId": "0100031141",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031141.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899948,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000312,
+          "name": "Defeat Heracles",
+          "originalName": "Defeat Heracles",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 16,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "35",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 12,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310311,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310311,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310311,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310311,
+              "type": "item",
+              "objectId": 6507,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000311,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100031210",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031210.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100031220",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031220.txt"
+                },
+                {
+                  "scriptId": "0100031221",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031221.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100031231",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031231.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899947,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000313,
+          "name": "Betting It All",
+          "originalName": "Betting It All",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 16,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "38",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 13,
+          "chapterSubStr": "",
+          "gifts": [
+            {
+              "id": 310312,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310312,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            },
+            {
+              "id": 310312,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 310312,
+              "type": "item",
+              "objectId": 6517,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000312,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100031310",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031310.txt"
+                },
+                {
+                  "scriptId": "0100031311",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031311.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100031320",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031320.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100031330",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031330.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0100031340",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031340.txt"
+                },
+                {
+                  "scriptId": "0100031341",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031341.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899946,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 1000314,
+          "name": "Pioneer of the Stars",
+          "originalName": "Pioneer of the Stars",
+          "type": "main",
+          "flags": [
+            "enableFollowQuest",
+            "actConsumeBattleWin"
+          ],
+          "consumeType": "ap",
+          "consume": 17,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "40",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 14,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/3.png",
+          "gifts": [
+            {
+              "id": 310313,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 10,
+              "giftAdds": []
+            },
+            {
+              "id": 310313,
+              "type": "item",
+              "objectId": 46,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310313,
+              "type": "item",
+              "objectId": 6501,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 310313,
+              "type": "item",
+              "objectId": 7999,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000313,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0100031410",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031410.txt"
+                },
+                {
+                  "scriptId": "0100031411",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031411.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0100031420",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031420.txt"
+                },
+                {
+                  "scriptId": "0100031421",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031421.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0100031430",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031430.txt"
+                },
+                {
+                  "scriptId": "0100031431",
+                  "script": "https://static.atlasacademy.io/NA/Script/01/0100031431.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 899945,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91200501,
+          "name": "Smile of the Goddess",
+          "originalName": "Smile of the Goddess",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 17,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "50",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/9.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 200500,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 200500,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 200500,
+              "value": 3,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9120050110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120050110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9120050120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120050120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9120050130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120050130.txt"
+                },
+                {
+                  "scriptId": "9120050131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9120050131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 679949,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 91501702,
+          "name": "Pancakes of Happiness",
+          "originalName": "Pancakes of Happiness",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 18,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "60",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 2,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/9.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000632,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "questClear",
+              "targetId": 91501701,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 501700,
+              "value": 2,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 501700,
+              "value": 4,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9150170210",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150170210.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9150170220",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150170220.txt"
+                },
+                {
+                  "scriptId": "9150170221",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9150170221.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 649828,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000308,
+          "name": "Quiet Bay",
+          "originalName": "Quiet Bay",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 15,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "42",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 8,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499963,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000312,
+          "name": "Hidden Island",
+          "originalName": "Hidden Island",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 16,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "46",
+          "spotId": 10308,
+          "spotName": "Archipelago",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 12,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 93000308,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499959,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10350,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Sunken Rock Seas",
+      "originalName": "Sunken Rock Seas",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010350.png",
+      "x": 1623.0,
+      "y": 288.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -7,
+      "questOfsX": 38,
+      "questOfsY": -59,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 93000309,
+          "name": "Ship Graveyard",
+          "originalName": "Ship Graveyard",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 17,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "50",
+          "spotId": 10350,
+          "spotName": "Sunken Rock Seas",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 9,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000304,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499962,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10351,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Caldera Island",
+      "originalName": "Caldera Island",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010351.png",
+      "x": 264.0,
+      "y": 408.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -11,
+      "questOfsX": 34,
+      "questOfsY": -65,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 91400901,
+          "name": "Capture Captain Kidd's Treasure",
+          "originalName": "Capture Captain Kidd's Treasure",
+          "type": "friendship",
+          "flags": [],
+          "consumeType": "ap",
+          "consume": 17,
+          "consumeItem": [],
+          "afterClear": "close",
+          "recommendLv": "50",
+          "spotId": 10351,
+          "spotName": "Caldera Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 1,
+          "chapterSubId": 1,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/8.png",
+          "gifts": [],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000314,
+              "value": 0,
+              "closedMessage": "Unlock by completing {0}"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 400900,
+              "value": 1,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 400900,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 400900,
+              "value": 2,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9140090110",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9140090120",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090120.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "9140090130",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090130.txt"
+                },
+                {
+                  "scriptId": "9140090131",
+                  "script": "https://static.atlasacademy.io/NA/Script/91/9140090131.txt"
+                }
+              ]
+            }
+          ],
+          "priority": 659909,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93000310,
+          "name": "Unexplored Island",
+          "originalName": "Unexplored Island",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 17,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "54",
+          "spotId": 10351,
+          "spotName": "Caldera Island",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 10,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000306,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499961,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 10352,
+      "blankEarth": false,
+      "joinSpotIds": [],
+      "mapId": 103,
+      "name": "Bountiful Sea",
+      "originalName": "Bountiful Sea",
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/spot_010352.png",
+      "x": 701.0,
+      "y": 1007.0,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -3,
+      "questOfsX": 37,
+      "questOfsY": -77,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "spotAdds": [],
+      "quests": [
+        {
+          "id": 93000311,
+          "name": "Secret Route",
+          "originalName": "Secret Route",
+          "type": "free",
+          "flags": [
+            "displayLoopmark"
+          ],
+          "consumeType": "ap",
+          "consume": 18,
+          "consumeItem": [],
+          "afterClear": "repeatLast",
+          "recommendLv": "60",
+          "spotId": 10352,
+          "spotName": "Bountiful Sea",
+          "warId": 103,
+          "warLongName": "Third Singularity\nSealed Ends of the Four Seas: Okeanos",
+          "chapterId": 3,
+          "chapterSubId": 11,
+          "chapterSubStr": "",
+          "giftIcon": "https://static.atlasacademy.io/NA/Items/6.png",
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1,
+              "giftAdds": []
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 93000308,
+              "value": 0,
+              "closedMessage": ""
+            }
+          ],
+          "releaseOverwrites": [],
+          "presents": [],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
+          "phasesNoBattle": [],
+          "phaseScripts": [],
+          "priority": 499960,
+          "noticeAt": 946684800,
+          "openedAt": 946684800,
+          "closedAt": 1893456000
+        }
+      ]
+    }
+  ],
+  "spotRoads": [
+    {
+      "id": 10301,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10301,
+      "dstSpotId": 10302,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000301,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000301,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10302,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10302,
+      "dstSpotId": 10303,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000302,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000302,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10303,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10303,
+      "dstSpotId": 10304,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000303,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000303,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10304,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10304,
+      "dstSpotId": 10350,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000304,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000304,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10305,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10304,
+      "dstSpotId": 10305,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000304,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000304,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10306,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10305,
+      "dstSpotId": 10306,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000305,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000305,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10307,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10306,
+      "dstSpotId": 10351,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000306,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000306,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10308,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10305,
+      "dstSpotId": 10307,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000308,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000308,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10309,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10307,
+      "dstSpotId": 10308,
+      "dispCondType": "itemGet",
+      "dispTargetId": 1000310,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 1000310,
+      "activeTargetValue": 0
+    },
+    {
+      "id": 10310,
+      "warId": 103,
+      "mapId": 103,
+      "image": "https://static.atlasacademy.io/NA/Terminal/QuestMap/Capter0103/QMap_Cap0103_Atlas/img_road0103_00.png",
+      "srcSpotId": 10308,
+      "dstSpotId": 10352,
+      "dispCondType": "itemGet",
+      "dispTargetId": 93000308,
+      "dispTargetValue": 0,
+      "dispCondType2": "questClear",
+      "dispTargetId2": 0,
+      "dispTargetValue2": 0,
+      "activeCondType": "itemGet",
+      "activeTargetId": 93000308,
+      "activeTargetValue": 0
+    }
+  ],
+  "questSelections": []
+}
