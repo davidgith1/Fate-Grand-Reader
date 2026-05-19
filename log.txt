@@ -1,33 +1,33 @@
-2026-05-19 06:53:47 UTC
+2026-05-19 16:56:58 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.5.3.26051504
 
-Early init took 36 ms
-Loading error handling took 14 ms
-Loading script took 69 ms
-Loading save slot metadata took 7 ms
-Loading persistent took 1 ms
-Running init code took 46 ms
+Early init took 53 ms
+Loading error handling took 18 ms
+Loading script took 89 ms
+Loading save slot metadata took 9 ms
+Loading persistent took 0 ms
+Running init code took 42 ms
 Loading analysis data took 3 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 5 ms
-Dump and make backups took 29 ms
+Analyze and compile ATL took 0 ms
+Reloading save slot metadata took 6 ms
+Dump and make backups took 32 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 28 ms
+Initial gc took 34 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 340 ms
+Creating interface object took 308 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 11 ms
+Load screen analysis took 12 ms
 Analyze screens took 2 ms
 Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
 Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 151 ms
+Running _start took 1 ms
+Interface start took 212 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -41,3 +41,6 @@ Screen sizes: virtual=(800, 600) physical=(1920, 969) drawable=(1920, 969)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(800, 600) physical=(1920, 969) drawable=(1920, 969)
 Maximum texture size: 4096x4096
+Screen sizes: virtual=(800, 600) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resize event: <Event(65533-VIDEORESIZE h=1009, mod=0, size=(1920, 1009), w=1920)>
