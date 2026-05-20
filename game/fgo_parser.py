@@ -59,7 +59,7 @@ def _parse_command_node(token: str):
             "tags": {"scene": token},
         }
     if command == "bgm" and len(token_parts) >= 2:
-        return {"type": "bgm", "fileName": token_parts[1], "tags": {"bgm": token}}
+        return {"type": "bgm", "name": token_parts[1], "tags": {"bgm": token}}
     if command in ("bgmstop", "soundstopall"):
         return {"type": "audio_stop", "tags": {command: token}}
     if command == "charaset" and len(token_parts) >= 4:

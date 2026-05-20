@@ -1,44 +1,43 @@
-2026-05-20 15:47:00 UTC
-Windows-10-10.0.19045-SP0
-Ren'Py 8.5.2.26010301
+2026-05-19 18:25:36 UTC
+Windows-11-10.0.26200-SP0
+Ren'Py 8.5.3.26051504
 
-Early init took 65 ms
-Loading error handling took 24 ms
-Loading script took 352 ms
+Early init took 55 ms
+Loading error handling took 17 ms
+Loading script took 88 ms
 Loading save slot metadata took 10 ms
 Loading persistent took 0 ms
-Running init code took 61 ms
-Loading analysis data took 4 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 6 ms
-Backing up script files to 'C:\\Users\\hp\\AppData\\Roaming/RenPy/backups\\Fate-Grand-Reader':
-Dump and make backups took 75 ms
+Running init code took 38 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 0 ms
+Reloading save slot metadata took 7 ms
+Dump and make backups took 29 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 51 ms
+Initial gc took 28 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 414 ms
+Creating interface object took 329 ms
 Init translation took 0 ms
-Cleaning stores took 1 ms
-Load screen analysis took 0 ms
-Analyze screens took 12 ms
-Save screen analysis took 13 ms
-Save pyanalysis took 6 ms
-Save bytecode took 32 ms
-Running _start took 2 ms
-Interface start took 432 ms
+Cleaning stores took 0 ms
+Load screen analysis took 11 ms
+Analyze screens took 0 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 145 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1366, 768)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
 Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce 940MX/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 566.36'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1366, 'current_h': 768, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1366, 705) drawable=(1366, 705)
+Renderer: 'NVIDIA GeForce RTX 3070/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 591.86'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(800, 600) physical=(1920, 969) drawable=(1920, 969)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1366, 705) drawable=(1366, 705)
+Screen sizes: virtual=(800, 600) physical=(1920, 969) drawable=(1920, 969)
 Maximum texture size: 4096x4096
