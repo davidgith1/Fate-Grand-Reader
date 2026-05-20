@@ -1,34 +1,34 @@
-2026-05-20 13:41:21 UTC
+2026-05-20 15:47:00 UTC
 Windows-10-10.0.19045-SP0
 Ren'Py 8.5.2.26010301
 
-Early init took 86 ms
-Loading error handling took 25 ms
-Loading script took 325 ms
-Loading save slot metadata took 13 ms
+Early init took 65 ms
+Loading error handling took 24 ms
+Loading script took 352 ms
+Loading save slot metadata took 10 ms
 Loading persistent took 0 ms
-Running init code took 58 ms
+Running init code took 61 ms
 Loading analysis data took 4 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 7 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 6 ms
 Backing up script files to 'C:\\Users\\hp\\AppData\\Roaming/RenPy/backups\\Fate-Grand-Reader':
-Dump and make backups took 61 ms
-Cleaning cache took 1 ms
+Dump and make backups took 75 ms
+Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 49 ms
+Initial gc took 51 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 433 ms
+Creating interface object took 414 ms
 Init translation took 0 ms
-Cleaning stores took 0 ms
+Cleaning stores took 1 ms
 Load screen analysis took 0 ms
-Analyze screens took 16 ms
-Save screen analysis took 12 ms
-Save pyanalysis took 4 ms
-Save bytecode took 28 ms
-Running _start took 1 ms
-Interface start took 524 ms
+Analyze screens took 12 ms
+Save screen analysis took 13 ms
+Save pyanalysis took 6 ms
+Save bytecode took 32 ms
+Running _start took 2 ms
+Interface start took 432 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1366, 768)

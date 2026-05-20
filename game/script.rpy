@@ -176,9 +176,11 @@ screen loading_screen(message):
         
         text message size 28
         text "Please wait..." size 22
-    
     add "running_fou":
             align(0.95,0.95)
+    add "gui/underbar.png":
+        align(1,0.95)
+        xsize(config.screen_width)
 
 
 screen message_screen(message):
