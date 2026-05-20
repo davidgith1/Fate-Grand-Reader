@@ -162,7 +162,7 @@ init python:
 
 init 999 python:
     config.quit_action = Quit(confirm=False)
-    style.default.font = "fonts/OpenSans-Regular.ttf"
+    style.default.font = "fonts/FGO-Main-Font.otf"
 
 screen loading_screen(message):
     tag loading
@@ -250,9 +250,9 @@ screen reader_dialogue(speaker, line):
         add "gui/fgo_textbox.png" xysize (760, 136) ypos 4
 
         if speaker and speaker != "Narrator":
-            text speaker xpos 30 ypos 16 xmaximum 220 size 22 color "#ffffff" font "fonts/OpenSans-Regular.ttf" substitute False
+            text speaker xpos 30 ypos 16 xmaximum 220 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
 
-        text line xpos 48 ypos 68 xmaximum 650 size 22 color "#ffffff" font "fonts/OpenSans-Regular.ttf" substitute False slow_cps 85 slow_abortable True
+        text line xpos 48 ypos 68 xmaximum 650 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True
 
     key "dismiss" action Return(True)
     key "K_SPACE" action Return(True)
@@ -279,7 +279,7 @@ screen reader_choice(choices):
                 hover_background Frame("gui/fgo_textbox.png", 18, 18)
                 action Return(i)
 
-                text choice xalign 0.5 yalign 0.5 xmaximum 610 size 22 color "#ffffff" font "fonts/OpenSans-Regular.ttf" substitute False
+                text choice xalign 0.5 yalign 0.5 xmaximum 610 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
 
 screen backlog_screen():
     modal True
@@ -302,8 +302,8 @@ screen backlog_screen():
                 spacing 10
                 for entry in backlog:
                     if entry.get("speaker"):
-                        text entry.get("speaker") size 18 color "#9fc7ff" font "fonts/OpenSans-Regular.ttf" substitute False
-                        text entry.get("line") size 20 font "fonts/OpenSans-Regular.ttf" substitute False
+                        text entry.get("speaker") size 18 color "#9fc7ff" font "fonts/FGO-Main-Font.otf" substitute False
+                        text entry.get("line") size 20 font "fonts/FGO-Main-Font.otf" substitute False
 
 screen settings_screen():
     modal True
