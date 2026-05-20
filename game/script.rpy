@@ -15,7 +15,7 @@ default backlog = []
 default current_reader_marker = None
 default resume_marker = None
 default menu_notice = ""
-define SPEED = 0.01
+define SPEED = 0.5
 image running_fou:
     "gui/loadIcon (1).png"
     SPEED
@@ -26,6 +26,10 @@ image running_fou:
     "gui/loadIcon (4).png"
     SPEED
     repeat
+
+image title_screen:
+    "gui/title_wallpaper.png"
+
 
 init python:
     from atlas_api import AtlasAPI
@@ -306,6 +310,9 @@ screen backlog_screen():
                         text entry.get("line") size 20 font "fonts/FGO-Main-Font.otf" substitute False
 
 screen settings_screen():
+    add "gui/settings.png" xysize (1920, 1080)
+    add "gui/settings_mask.png"  
+    add "gui/settings_textbox.png" 
     modal True
     zorder 170
 
@@ -345,10 +352,9 @@ screen reader_nav():
 screen title_menu():
     tag menu
     
-    add "gui/title_wallpaper.png" xysize (config.screen_width, config.screen_height)
-    add "gui/title_text_fade.png" xysize (config.screen_width, config.screen_height)
+    add "gui/title_wallpaper.png" xysize (config.screen_width, config.screen_height) crop (20, 0, config.screen_width, config.screen_height)
     add "gui/logo_title.png":
-        align (0.5, 0.35)
+        align (0.5, 0.25)
     hbox:
         align (0.5, 0.90)
         spacing 50
