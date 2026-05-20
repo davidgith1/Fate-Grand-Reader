@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 286: for expects a non-empty block.
-    if entry.get("speaker"):
-                            ^
+File "game/script.rpy", line 160: expected a keyword argument or child statement.
+    "gui/loadIcon (1).png"
+    ^
 
-Ren'Py Version: Ren'Py 8.5.3.26051504
-Mon May 18 23:06:10 2026
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Wed May 20 18:48:56 2026

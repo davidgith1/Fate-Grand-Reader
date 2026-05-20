@@ -1,111 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 134, in script
-    call screen message_screen(war_load_error)
-  File "game/script.rpy", line 32, in execute
-    screen message_screen(message):
-  File "game/script.rpy", line 32, in execute
-    screen message_screen(message):
-  File "game/script.rpy", line 35, in execute
-    frame:
-  File "game/script.rpy", line 41, in execute
-    has vbox
-  File "game/script.rpy", line 43, in execute
-    text message size 26
-NameError: name 'SSL' is not defined
+After initialization, but before game start.
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'F:\\Fate-Grand-Reader\\game\\saves\\navigation.json'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 134, in script
-    call screen message_screen(war_load_error)
-  File "renpy/ast.py", line 2251, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2205, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 381, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 698, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 341, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 306, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2163, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "renpy/display/core.py", line 2709, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 460, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 460, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 460, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2709, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/script.rpy", line 32, in execute
-    screen message_screen(message):
-  File "game/script.rpy", line 32, in execute
-    screen message_screen(message):
-  File "game/script.rpy", line 35, in execute
-    frame:
-  File "game/script.rpy", line 41, in execute
-    has vbox
-  File "game/script.rpy", line 43, in execute
-    text message size 26
-  File "renpy/text/text.py", line 2228, in __init__
-    self.set_text(text, scope, substitute)  # type: ignore
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/text/text.py", line 2367, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)  # type: ignore
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 355, in substitute
-    s = interpolate(s, variables)  # type: ignore
-        ~~~~~~~~~~~^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 89, in interpolate
-    raise e
-  File "renpy/substitutions.py", line 81, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1308, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1301, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<none>", line 1, in <module>
-NameError: name 'SSL' is not defined
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 532, in main
+    renpy.dump.dump(False)
+    ~~~~~~~~~~~~~~~^^^^^^^
+  File "renpy/dump.py", line 255, in dump
+    os.unlink(filename)
+    ~~~~~~~~~^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'F:\\Fate-Grand-Reader\\game\\saves\\navigation.json'
 
-Windows-11-10.0.26200-SP0 AMD64
-Ren'Py 8.5.3.26051504
+Windows-10-10.0.19045-SP0 AMD64
+Ren'Py 8.5.2.26010301
  
-Mon May 18 21:33:38 2026
+Wed May 20 19:08:26 2026
