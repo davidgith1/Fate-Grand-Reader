@@ -1,5 +1,6 @@
 define n = Character(None)
-
+define config.screen_width = 1280
+define config.screen_height = 720
 default active_war = None
 default war_list = []
 default war_load_error = None
@@ -14,10 +15,21 @@ default backlog = []
 default current_reader_marker = None
 default resume_marker = None
 default menu_notice = ""
+define SPEED = 0.01
+image running_fou:
+    "gui/loadIcon (1).png"
+    SPEED
+    "gui/loadIcon (2).png"
+    SPEED
+    "gui/loadIcon (3).png"
+    SPEED
+    "gui/loadIcon (4).png"
+    SPEED
+    repeat
 
 init python:
     from atlas_api import AtlasAPI
-
+    
     def get_api():
         if not hasattr(renpy.store, "_atlas_api") or renpy.store._atlas_api is None:
             renpy.store._atlas_api = AtlasAPI()
@@ -161,9 +173,15 @@ screen loading_screen(message):
         xminimum 400
         yminimum 120
         has vbox
-
+        
         text message size 28
         text "Please wait..." size 22
+    add "running_fou":
+            align(0.95,0.95)
+    add "gui/underbar.png":
+        align(1,0.95)
+        xsize(config.screen_width)
+
 
 screen message_screen(message):
     tag menu
@@ -326,13 +344,14 @@ screen reader_nav():
 
 screen title_menu():
     tag menu
-
+    
     add "gui/title_wallpaper.png" xysize (config.screen_width, config.screen_height)
     add "gui/title_text_fade.png" xysize (config.screen_width, config.screen_height)
-
-    vbox:
-        align (0.12, 0.68)
-        spacing 12
+    add "gui/logo_title.png":
+        align (0.5, 0.35)
+    hbox:
+        align (0.5, 0.90)
+        spacing 50
 
         textbutton "Start" action Jump("war_list_flow")
         if getattr(persistent, "reader_marker", None):
@@ -430,6 +449,7 @@ label war_list_flow:
 
     if not war_list:
         show screen loading_screen("Fetching available NA Wars...")
+
         $ renpy.pause(0.1, hard=True)
         python:
             api = get_api()
