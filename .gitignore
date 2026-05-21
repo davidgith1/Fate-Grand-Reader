@@ -7,3 +7,7 @@ log.txt
 log.txt
 /game/cache
 /game/saves
+game/saves/navigation.json
+game/script.rpyc
+game/saves/navigation.json
+/game/saves

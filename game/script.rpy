@@ -16,6 +16,15 @@ default current_reader_marker = None
 default resume_marker = None
 default menu_notice = ""
 define SPEED = 0.5
+# Title Screens
+define titleScreen = "part2"
+define part1title =  "gui/title_wallpaper.png"
+define part1logo = "gui/logo_title.png"
+define part1terminal = "gui/warTerminal.png"
+define part2title = "gui/part2title.png"
+define part2logo = "gui/logo_title_cil.png"
+define part2terminal="gui/warTerminal2.png"
+#######################
 image running_fou:
     "gui/loadIcon (1).png"
     SPEED
@@ -367,9 +376,17 @@ screen reader_nav():
 screen title_menu():
     tag menu
     
-    add "gui/title_wallpaper.png" xysize (config.screen_width, config.screen_height) crop (20, 0, config.screen_width, config.screen_height)
-    add "gui/logo_title.png":
-        align (0.5, 0.25)
+    if titleScreen == "part1":
+        add part1title:
+            xysize (config.screen_width, config.screen_height) crop (20, 0, config.screen_width, config.screen_height)
+        add part1logo:
+            align (0.5, 0.25)
+    elif titleScreen == "part2":
+        add part2title:
+            xysize (config.screen_width, config.screen_height) crop (0.0, 0.0, 1.0, 1.0)
+        add part2logo:
+            align (0.5, 0.25)
+
     hbox:
         align (0.5, 0.90)
         spacing 50
@@ -430,6 +447,12 @@ screen quest_title_card(quest):
             textbutton "Quit" action Quit(confirm=False)
 
 screen war_select():
+    if titleScreen == "part1":
+        add part1terminal:
+            align(config.screen_width,config.screen_height)
+    elif titleScreen == "part2":
+        add part2terminal:
+            align(config.screen_width,config.screen_height)
     tag menu
     modal True
     frame:
@@ -451,7 +474,10 @@ screen war_select():
                     for war in war_list:
                         $ title = war.get("longName") or war.get("name") or "Unnamed War"
                         $ summary = "[war.get('id')] - [title]"
-                        textbutton summary action [SetVariable("selected_war_id", war.get("id")), Return(True)]
+                        textbutton summary:
+                            action [SetVariable("selected_war_id", war.get("id")), Return(True)]
+                            text_color "#000000"
+                        
 
         hbox:
             spacing 16
