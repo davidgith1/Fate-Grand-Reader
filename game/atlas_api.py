@@ -144,6 +144,12 @@ class AtlasAPI:
             if war.get("id") == war_id:
                 return war
         return None
+    
+    def get_war_banner(self, war_id: int, force_refresh: bool = False):
+        war = self.get_war_detail(war_id, force_refresh=force_refresh)
+        if not war:
+            return None
+        return war.get("Banner")
 
     def get_war_detail(self, war_id: int, force_refresh: bool = False):
         url = self._build_url(f"nice/{self.region}/war/{war_id}", {"lang": self.lang})
