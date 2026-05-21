@@ -310,7 +310,7 @@ screen backlog_screen():
                         text entry.get("line") size 20 font "fonts/OpenSans-Regular.ttf" substitute False
 
 screen settings_screen():
-    add "gui/settings.png" xysize (1920, 1080)
+    add "gui/settings.png" xysize (config.screen_width, config.screen_height)
     add "gui/settings_mask.png"  
     add "gui/settings_textbox.png" 
     modal True
