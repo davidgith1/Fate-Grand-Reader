@@ -1,7 +1,12 @@
 define n = Character(None)
+
+# target resolution
 define config.screen_width = 1280
 define config.screen_height = 720
+
+# This can be used to change part.
 default active_war = None
+
 default war_list = []
 default war_load_error = None
 default selected_war_id = 0
@@ -15,17 +20,23 @@ default backlog = []
 default current_reader_marker = None
 default resume_marker = None
 default menu_notice = ""
+
+# fou running speed
 define SPEED = 0.5
+
 # Title Screens
-define titleScreen = "part2"
+# These should change by part
+define titleScreen = "part1"
 define part1title =  "gui/title_wallpaper.png"
 define part1logo = "gui/logo_title.png"
 define part1terminal = "gui/warTerminal.png"
 define part2title = "gui/part2title.png"
 define part2logo = "gui/logo_title_cil.png"
 define part2terminal="gui/warTerminal2.png"
-#######################
-image running_fou:
+
+
+####################### 
+image running_fou: # loading screen icon running
     "gui/loadIcon (1).png"
     SPEED
     "gui/loadIcon (2).png"
@@ -36,8 +47,6 @@ image running_fou:
     SPEED
     repeat
 
-image title_screen:
-    "gui/title_wallpaper.png"
 
 
 init python:
@@ -259,7 +268,7 @@ screen reader_dialogue(speaker, line):
         align (0.5, 1.0)
         xysize (760, 140)
         yoffset -2
-
+        add "gui/fgo_nameplate.png" xysize (760, 136) ypos 4
         add "gui/fgo_textbox.png" xysize (760, 136) ypos 4
 
         if speaker and speaker != "Narrator":
@@ -383,7 +392,7 @@ screen title_menu():
             align (0.5, 0.25)
     elif titleScreen == "part2":
         add part2title:
-            xysize (config.screen_width, config.screen_height) crop (0.0, 0.0, 1.0, 1.0)
+            xysize (config.screen_width*2, config.screen_height*2) crop (20, 0.0, config.screen_width, config.screen_height)
         add part2logo:
             align (0.5, 0.25)
 
@@ -447,6 +456,8 @@ screen quest_title_card(quest):
             textbutton "Quit" action Quit(confirm=False)
 
 screen war_select():
+    add Solid("#000000")
+    zorder 0
     if titleScreen == "part1":
         add part1terminal:
             align(config.screen_width,config.screen_height)
