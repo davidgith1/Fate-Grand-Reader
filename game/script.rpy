@@ -310,22 +310,37 @@ screen backlog_screen():
                         text entry.get("line") size 20 font "fonts/FGO-Main-Font.otf" substitute False
 
 screen settings_screen():
-    add "gui/settings.png" xysize (1920, 1080)
-    add "gui/settings_mask.png"  
-    add "gui/settings_textbox.png" 
+    add "gui/settings.png" xysize (config.screen_width, config.screen_height)
+      
+    add "gui/settings_mask.png"
     modal True
     zorder 170
-
+    
     frame:
         align (0.5, 0.5)
         xysize (440, 240)
         xpadding 22
         ypadding 18
+        
+        
         has vbox
-
-        text "Settings" size 34
-        text "Music Volume" size 22
-        bar value Preference("music volume") xmaximum 360
+        spacing 15
+        text "Settings":
+            color "#000000"
+            xalign 0.5
+            size 34 
+        frame:
+            align (0.5, 0.5)
+            xysize (440, 240)
+            xpadding 22
+            ypadding 18
+            add "gui/settings_textbox.png":
+                align(0.4,0.0)
+            text "Music Volume":
+                align (0.5,0.2)
+                color "#000000"
+                size 22
+            bar value Preference("music volume") xmaximum 360
         text "Sound Volume" size 22
         bar value Preference("sound volume") xmaximum 360
         textbutton "Close" action Hide("settings_screen")
