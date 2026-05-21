@@ -430,6 +430,8 @@ screen quest_title_card(quest):
             textbutton "Quit" action Quit(confirm=False)
 
 screen war_select():
+    add "gui/warTerminal.png":
+        align(config.screen_width,config.screen_height)
     tag menu
     modal True
     frame:
@@ -451,7 +453,10 @@ screen war_select():
                     for war in war_list:
                         $ title = war.get("longName") or war.get("name") or "Unnamed War"
                         $ summary = "[war.get('id')] - [title]"
-                        textbutton summary action [SetVariable("selected_war_id", war.get("id")), Return(True)]
+                        textbutton summary:
+                            action [SetVariable("selected_war_id", war.get("id")), Return(True)]
+                            text_color "#000000"
+                        
 
         hbox:
             spacing 16
