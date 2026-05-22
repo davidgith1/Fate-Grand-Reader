@@ -339,32 +339,29 @@ screen settings_screen():
     
     frame:
         background None
-        align (0.5, 0.2)
-        xysize (440, 240)
+        align (0.5, 0.5)
+        xysize (1100, 650)
         xpadding 22
         ypadding 18
-        
-        
         has vbox
         spacing 15
         xalign 0.5
         text "Settings":
-            color "#000000"
-            xalign 0.5
+            color "#befbff"
+            xalign 0
             size 34 
+        #Music Row
         frame:
-            xalign 0.5
-            background "gui/settings_textbox.png"
+            xalign 0.0
             xysize (400, 110)
             xpadding 20
             ypadding 15
             
-            has vbox
+            has hbox
             xalign 0.5
             yalign 0.5
             
-            text "Music Volume":
-                color "#000000"
+            text "Music Volume : ":
                 size 22
                 xalign 0.5
             bar value Preference("music volume"):
@@ -376,18 +373,18 @@ screen settings_screen():
                 right_bar Solid("#d9d9d9")
         
         frame:
-            xalign 0.5
-            background "gui/settings_textbox.png"
+            xalign 0
+            #background "gui/settings_textbox.png"
             xysize (400, 110)
             xpadding 20
             ypadding 15
             
-            has vbox
+            has hbox
             xalign 0.5
             yalign 0.5
             
-            text "Sound Volume":
-                color "#000000"
+            text "Sound Volume : ":
+                #color "#000000"
                 size 22
                 xalign 0.5
                 
@@ -400,7 +397,7 @@ screen settings_screen():
                 right_bar Solid("#d9d9d9")
         textbutton "Close":
             action Hide("settings_screen")
-            xalign 0.5
+            xalign 0.0
             text_color "#ffffff"
             text_hover_color "#a9d6ff"
 
