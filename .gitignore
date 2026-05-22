@@ -13,3 +13,4 @@ game/saves/navigation.json
 /game/saves
 /game/__pycache__
 *.rpyc
+game/script.rpyc
