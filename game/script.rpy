@@ -27,7 +27,7 @@ define SPEED = 0.5
 
 # Title Screens
 # These should change by part
-define titleScreen = "part1"
+define titleScreen = "part1" #so far part1 and part2 are only done
 define part1title =  "gui/title_wallpaper.png"
 define part1logo = "gui/logo_title.png"
 define part1terminal = "gui/warTerminal.png"
@@ -219,9 +219,9 @@ screen loading_screen(message):
         text message size 28
         text "Please wait (May take a while on your first load)..." size 22
     add "running_fou":
-            align(0.95,0.95)
+            align(0.95,0.90)
     add "gui/underbar.png":
-        align(1,0.95)
+        align(1,0.90)
         xsize(config.screen_width)
 
 
@@ -354,40 +354,94 @@ screen backlog_screen():
                         text entry.get("line") size 20 font "fonts/FGO-Main-Font.otf" substitute False
 
 screen settings_screen():
-    add "gui/settings.png" xysize (config.screen_width, config.screen_height)
-      
-    add "gui/settings_mask.png"
+    #The settings background
+    
+    add "gui/myRoom.png" xysize (config.screen_width, config.screen_height)
+    add "gui/settings.png":
+        xysize (config.screen_width,config.screen_height)
+        align (0.5, 0.5)
     modal True
     zorder 170
     
     frame:
+        background None
         align (0.5, 0.5)
-        xysize (440, 240)
+        xysize (1100, 650)
         xpadding 22
         ypadding 18
-        
-        
         has vbox
         spacing 15
+        xalign 0.5
         text "Settings":
-            color "#000000"
-            xalign 0.5
+            color "#befbff"
+            xalign 0
             size 34 
+        #Music Row
         frame:
-            align (0.5, 0.5)
-            xysize (440, 240)
-            xpadding 22
-            ypadding 18
-            add "gui/settings_textbox.png":
-                align(0.4,0.0)
-            text "Music Volume":
-                align (0.5,0.2)
-                color "#000000"
+            xalign 0.0
+            xysize (400, 110)
+            xpadding 20
+            ypadding 15
+            
+            has hbox
+            xalign 0.5
+            yalign 0.5
+            
+            text "Music Volume : ":
                 size 22
-            bar value Preference("music volume") xmaximum 360
-        text "Sound Volume" size 22
-        bar value Preference("sound volume") xmaximum 360
-        textbutton "Close" action Hide("settings_screen")
+                xalign 0.5
+            frame:
+                xalign 0.5
+                yalign 0.5
+                xysize (320, 16)
+                bar value Preference("music volume"):
+                    base_bar Frame("gui/barFrame.png", Borders(4, 4, 4, 4))
+                    xmaximum 320
+                    ysize 10
+                    xalign 0.5
+                    yalign 0.5
+                    left_bar Frame("gui/progressBarfull.png", Borders(4, 4, 4, 4))
+                    right_bar Frame("gui/progressBarempty.png", Borders(4, 4, 4, 4))
+                add "gui/barFrame.png":
+                    xalign 0.5
+                    yalign 0.5
+                    xysize (320, 16)
+        
+        frame:
+            xalign 0
+            #background "gui/settings_textbox.png"
+            xysize (400, 110)
+            xpadding 20
+            ypadding 15
+            
+            has hbox
+            xalign 0.5
+            yalign 0.5
+            
+            text "Sound Volume : ":
+                #color "#000000"
+                size 22
+                xalign 0.5
+            frame:
+                xalign 0.5
+                yalign 0.5
+                xysize (320, 16)
+                bar value Preference("sound volume"):
+                    xmaximum 320
+                    ysize 10
+                    xalign 0.5
+                    yalign 0.5
+                    left_bar Frame("gui/progressBarfull.png", Borders(4, 4, 4, 4))
+                    right_bar Frame("gui/progressBarempty.png", Borders(4, 4, 4, 4))
+                add "gui/barFrame.png":
+                    xalign 0.5
+                    yalign 0.5
+                    xysize (320, 16)
+        textbutton "Close":
+            action Hide("settings_screen")
+            xalign 0.0
+            text_color "#ffffff"
+            text_hover_color "#a9d6ff"
 
 screen reader_nav():
     zorder 100
