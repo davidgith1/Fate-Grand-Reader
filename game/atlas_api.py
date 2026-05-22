@@ -1,5 +1,4 @@
 import json
-import os
 import ssl
 import urllib.parse
 import urllib.request
@@ -145,11 +144,10 @@ class AtlasAPI:
                 return war
         return None
     
-    def get_war_banner(self, war_id: int, force_refresh: bool = False):
-        war = self.get_war_detail(war_id, force_refresh=force_refresh)
-        if not war:
+    def get_banner_path(self, banner_url: str, force_refresh: bool = False):
+        if not banner_url:
             return None
-        return war.get("Banner")
+        return self.get_cached_asset(banner_url, force_refresh=force_refresh)
 
     def get_war_detail(self, war_id: int, force_refresh: bool = False):
         url = self._build_url(f"nice/{self.region}/war/{war_id}", {"lang": self.lang})
@@ -175,39 +173,6 @@ class AtlasAPI:
             return None
         url = f"{self.STATIC_BASE_URL}/{self.region}/CharaFigure/{chara_id}/{chara_id}_merged.png"
         return self.get_cached_asset(url, force_refresh=force_refresh)
-
-    def get_character_face_path(self, chara_id: str, face: str | int = 0, force_refresh: bool = False):
-        sheet_path = self.get_character_path(chara_id, force_refresh=force_refresh)
-        if not sheet_path:
-            return None
-
-        try:
-            face_index = max(0, int(face))
-        except Exception:
-            face_index = 0
-
-        derived_path = self.cache.get_derived_asset_path(f"chara-face-v2:{sheet_path}:{face_index}")
-        if os.path.exists(derived_path) and not force_refresh:
-            return derived_path
-
-        try:
-            from PIL import Image
-
-            with Image.open(sheet_path) as sheet:
-                sheet = sheet.convert("RGBA")
-                columns = 4
-                cell_width = sheet.width // columns
-                cell_height = 320 if sheet.height % 320 == 0 else max(cell_width, sheet.height // max(1, sheet.height // cell_width))
-                rows = max(1, sheet.height // cell_height)
-                face_index = min(face_index, rows * columns - 1)
-                left = (face_index % columns) * cell_width
-                top = (face_index // columns) * cell_height
-                crop = sheet.crop((left, top, left + cell_width, min(top + cell_height, sheet.height)))
-                crop.save(derived_path)
-        except Exception:
-            return sheet_path
-
-        return derived_path
 
     def get_bgm_path(self, bgm_name: str, force_refresh: bool = False):
         if not bgm_name:

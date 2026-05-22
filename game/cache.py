@@ -22,12 +22,12 @@ class CacheManager:
         self.json_dir = os.path.join(self.base_dir, "json")
         self.text_dir = os.path.join(self.base_dir, "text")
         self.asset_dir = os.path.join(self.base_dir, "asset")
-        self.derived_dir = os.path.join(self.base_dir, "derived")
 
-        for directory in (self.base_dir, self.json_dir, self.text_dir, self.asset_dir, self.derived_dir):
+        for directory in (self.base_dir, self.json_dir, self.text_dir, self.asset_dir):
             os.makedirs(directory, exist_ok=True)
 
     def _hashed_name(self, url: str, ext: str) -> str:
+        # Atlas URLs can contain slashes and query strings, so cache by stable hash.
         digest = hashlib.sha256(url.encode("utf-8")).hexdigest()
         return f"{digest}{ext}"
 
@@ -77,6 +77,3 @@ class CacheManager:
         with open(path, "wb") as fp:
             fp.write(content)
         return path
-
-    def get_derived_asset_path(self, key: str, ext: str = ".png"):
-        return self._file_path(key, self.derived_dir, ext)

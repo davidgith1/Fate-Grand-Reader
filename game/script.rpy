@@ -14,12 +14,13 @@ default current_background_path = None
 default current_scene_id = None
 default current_characters = []
 default current_chara_defs = {}
-default current_speaker_name = None
-default current_speaker_slot = None
 default backlog = []
 default current_reader_marker = None
 default resume_marker = None
 default menu_notice = ""
+default music_flag = None
+default music_path = ""
+default music_fade = 0.2
 
 # fou running speed
 define SPEED = 0.5
@@ -57,9 +58,6 @@ init python:
             renpy.store._atlas_api = AtlasAPI()
         return renpy.store._atlas_api
 
-    def renpy_literal(value):
-        return str(value).replace("[", "[[").replace("{", "{{")
-
     def normalize_choice_text(text):
         text = str(text or "").strip()
         text = text.lstrip("0123456789")
@@ -93,31 +91,26 @@ init python:
         return {0: 0.24, 1: 0.5, 2: 0.76}.get(pos, 0.5)
 
     def refresh_visible_characters():
-        active_name = renpy.store.current_speaker_name
-        active_slot = renpy.store.current_speaker_slot
-        has_active = any(
-            data.get("visible")
-            and (slot == active_slot or (data.get("name") and data.get("name") == active_name))
-            for slot, data in renpy.store.current_chara_defs.items()
-        )
         visible = []
         for slot, data in sorted(renpy.store.current_chara_defs.items()):
             if data.get("visible") and data.get("path"):
-                is_active = slot == active_slot or data.get("name") == active_name
                 visible.append(
                     {
                         "slot": slot,
                         "path": data.get("path"),
+                        "face": data.get("face") or "0",
                         "xalign": slot_xalign(slot, data.get("position")),
-                        "alpha": 1.0 if not has_active or is_active else 0.45,
                     }
                 )
         renpy.store.current_characters = visible
 
-    def set_active_speaker(speaker, slot=None):
-        renpy.store.current_speaker_name = speaker
-        renpy.store.current_speaker_slot = slot
-        refresh_visible_characters()
+    def chara_face_crop(face):
+        try:
+            face_index = max(0, int(face))
+        except Exception:
+            face_index = 0
+        # Character sheets are 1024 wide: four 256px face tiles per row below the body.
+        return ((face_index % 4) * 256, 768 + (face_index // 4) * 256, 256, 256)
 
     def apply_reader_node(node, api):
         node_type = node.get("type")
@@ -126,18 +119,11 @@ init python:
             path = api.get_background_path(renpy.store.current_scene_id)
             renpy.store.current_background_path = path.replace("\\", "/") if path else None
             return True
-        if node_type == "bgm":
-            path = api.get_bgm_path(node.get("name"))
-            if path:
-                renpy.music.play(path, channel="music", loop=True, fadein=0.2)
-            return True
-        if node_type == "audio_stop":
-            renpy.music.stop(channel="music", fadeout=0.2)
-            return True
         if node_type == "chara_set":
             slot = node.get("slot")
             if slot:
-                char_path = api.get_character_face_path(node.get("chara_id"), 0)
+                # Keep the sheet; the stage crops the body and overlays face 0.
+                char_path = api.get_character_path(node.get("chara_id"))
                 renpy.store.current_chara_defs[slot] = {
                     "id": node.get("chara_id"),
                     "name": node.get("name"),
@@ -151,13 +137,8 @@ init python:
         if node_type == "chara_face":
             slot = node.get("slot")
             if slot and slot in renpy.store.current_chara_defs:
+                # Swap only the expression index; the sheet path stays the same.
                 renpy.store.current_chara_defs[slot]["face"] = node.get("face") or "0"
-                char_path = api.get_character_face_path(
-                    renpy.store.current_chara_defs[slot].get("id"),
-                    renpy.store.current_chara_defs[slot].get("face"),
-                )
-                if char_path:
-                    renpy.store.current_chara_defs[slot]["path"] = char_path.replace("\\", "/")
                 refresh_visible_characters()
             return True
         if node_type == "chara_show":
@@ -175,6 +156,45 @@ init python:
                 refresh_visible_characters()
             return True
         return False
+
+    def get_scene_music_flag(node, api):
+        if node.get("type") == "bgm":
+            parts = (node.get("tags") or {}).get("bgm", "").split()
+            path = api.get_bgm_path(node.get("name"))
+            if path:
+                try:
+                    fadein = float(parts[2]) if len(parts) >= 3 else 0.2
+                except Exception:
+                    fadein = 0.2
+                return {"action": "play", "path": path.replace("\\", "/"), "fade": fadein}
+        if node.get("type") == "audio_stop":
+            token = next(iter((node.get("tags") or {}).values()), "")
+            parts = token.split()
+            try:
+                fadeout = float(parts[-1]) if len(parts) >= 2 else 0.2
+            except Exception:
+                fadeout = 0.2
+            return {"action": "stop", "fade": fadeout}
+
+        # Music flags are embedded in scene text, so resolve them before the line is shown.
+        for key, token in (node.get("tags") or {}).items():
+            parts = (token or key).split()
+            command = parts[0].lower() if parts else ""
+            if command == "bgm" and len(parts) >= 2:
+                path = api.get_bgm_path(parts[1])
+                if path:
+                    try:
+                        fadein = float(parts[2]) if len(parts) >= 3 else 0.2
+                    except Exception:
+                        fadein = 0.2
+                    return {"action": "play", "path": path.replace("\\", "/"), "fade": fadein}
+            elif command in ("bgmstop", "soundstopall"):
+                try:
+                    fadeout = float(parts[2]) if len(parts) >= 3 else 0.2
+                except Exception:
+                    fadeout = 0.2
+                return {"action": "stop", "fade": fadeout}
+        return None
 
     def save_current_marker():
         if renpy.store.current_reader_marker:
@@ -197,7 +217,7 @@ screen loading_screen(message):
         has vbox
         
         text message size 28
-        text "Please wait..." size 22
+        text "Please wait (May take a while on your first load)..." size 22
     add "running_fou":
             align(0.95,0.95)
     add "gui/underbar.png":
@@ -245,7 +265,13 @@ screen vn_stage(background_path, scene_id, characters):
         add Solid("#111318")
 
     for chara in characters:
-        add chara["path"] xalign chara["xalign"] yalign 1.0 zoom 1.45 alpha chara["alpha"]
+        fixed at Transform(zoom=1.45):
+            xysize (1024, 768)
+            xalign chara["xalign"]
+            yalign 1.0
+            # Sheets store the body at the top and expression tiles below it.
+            add chara["path"] crop (0, 0, 1024, 768)
+            add chara["path"] crop chara_face_crop(chara["face"]) xpos 384 ypos 0
 
     if scene_id and not background_path:
         frame:
@@ -268,8 +294,8 @@ screen reader_dialogue(speaker, line):
         align (0.5, 1.0)
         xysize (760, 140)
         yoffset -2
-        add "gui/fgo_nameplate.png" xysize (760, 136) ypos 4
-        add "gui/fgo_textbox.png" xysize (760, 136) ypos 4
+        add "gui/fgo_nameplate.png" xysize (int(config.screen_width * 0.2578125), int(config.screen_height * 0.0833333333)) ypos 4 # numbers come from dimensions of photo /1280
+        add "gui/fgo_textbox.png" xysize (int(config.screen_width * 0.8), int(config.screen_height * 0.2152777778)) ypos 4
 
         if speaker and speaker != "Narrator":
             text speaker xpos 30 ypos 16 xmaximum 220 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
@@ -297,8 +323,8 @@ screen reader_choice(choices):
         for i, choice in enumerate(choices):
             button:
                 xysize (650, 54)
-                background Frame("gui/fgo_textbox.png", 18, 18)
-                hover_background Frame("gui/fgo_textbox.png", 18, 18)
+                background Frame("gui/img_talk_selectbg.png", 18, 18)
+                hover_background Frame("gui/img_talk_selectbg.png", 18, 18)
                 action Return(i)
 
                 text choice xalign 0.5 yalign 0.5 xmaximum 610 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
@@ -483,11 +509,21 @@ screen war_select():
             viewport id "war_list_view" mousewheel True draggable True:
                 vbox:
                     for war in war_list:
+                        # Show the Atlas banner as the war select button.
                         $ title = war.get("longName") or war.get("name") or "Unnamed War"
-                        $ summary = "[war.get('id')] - [title]"
-                        textbutton summary:
-                            action [SetVariable("selected_war_id", war.get("id")), Return(True)]
-                            text_color "#000000"
+                        $ banner = war.get("banner")
+                        if banner:
+                            imagebutton:
+                                idle banner
+                                hover banner
+                                action [SetVariable("selected_war_id", war.get("id")), Return(True)]
+                                xsize 600
+                                ysize 120
+                        else:
+                            textbutton title:
+                                action [SetVariable("selected_war_id", war.get("id")), Return(True)]
+                                text_color "#000000"
+                        null height 8
                         
 
         hbox:
@@ -528,6 +564,8 @@ label war_list_flow:
                     "longName": item.get("longName", ""),
                     "scriptId": item.get("scriptId", ""),
                     "script": item.get("script", ""),
+                    # Cache the banner URL so Ren'Py can render it as a local image.
+                    "banner": (api.get_banner_path(item.get("banner")) or "").replace("\\", "/")
                 }
                 for item in war_list
             ]
@@ -555,6 +593,17 @@ label load_war:
 
     jump play_war
 
+label apply_music_flag:
+    # Ren'Py music statements must live in script, so Python only resolves the flag data.
+    if music_flag and music_flag.get("action") == "play":
+        $ music_path = music_flag.get("path")
+        $ music_fade = music_flag.get("fade", 0.2)
+        play music music_path fadein music_fade
+    elif music_flag and music_flag.get("action") == "stop":
+        $ music_fade = music_flag.get("fade", 0.2)
+        stop music fadeout music_fade
+    return
+
 label play_war:
     scene black
     with fade
@@ -562,8 +611,6 @@ label play_war:
     $ current_scene_id = None
     $ current_characters = []
     $ current_chara_defs = {}
-    $ current_speaker_name = None
-    $ current_speaker_slot = None
     $ backlog = []
     show screen vn_stage(current_background_path, current_scene_id, current_characters)
     show screen reader_nav
@@ -572,6 +619,7 @@ label play_war:
     n "Now playing: [war_name]"
 
     if active_war.get("story_quests"):
+        # Modern wars are split into quest phases, so load each phase script as the reader reaches it.
         $ quest_idx = resume_marker.get("quest_idx", 0) if resume_marker else 0
         $ resume_phase_idx = resume_marker.get("phase_idx", 0) if resume_marker else 0
         while quest_idx < len(active_war["story_quests"]):
@@ -597,20 +645,25 @@ label play_war:
                         $ node = phase_nodes[idx]
                         if node["type"] == "dialogue":
                             $ speaker = node.get("speaker") or "Narrator"
-                            $ speaker_slot = node.get("speaker_slot")
                             $ text = node.get("text") or ""
                             if text:
-                                $ set_active_speaker(speaker, speaker_slot)
+                                $ music_flag = get_scene_music_flag(node, api)
+                                call apply_music_flag
                                 $ record_dialogue(speaker, text)
                                 call screen reader_dialogue(speaker, text)
                         elif node["type"] == "choice":
+                            $ music_flag = get_scene_music_flag(node, api)
+                            call apply_music_flag
                             python:
                                 choice_options, next_idx = collect_choice_options(phase_nodes, idx)
                             if choice_options:
                                 call screen reader_choice(choice_options)
                             $ idx = next_idx - 1
-                        elif apply_reader_node(node, api):
-                            show screen vn_stage(current_background_path, current_scene_id, current_characters)
+                        else:
+                            $ music_flag = get_scene_music_flag(node, api)
+                            call apply_music_flag
+                            if not music_flag and apply_reader_node(node, api):
+                                show screen vn_stage(current_background_path, current_scene_id, current_characters)
                         $ idx += 1
 
                 $ phase_idx += 1
@@ -640,20 +693,25 @@ label play_war:
         $ node = active_war["script_nodes"][idx]
         if node["type"] == "dialogue":
             $ speaker = node.get("speaker") or "Narrator"
-            $ speaker_slot = node.get("speaker_slot")
             $ text = node.get("text") or ""
             if text:
-                $ set_active_speaker(speaker, speaker_slot)
+                $ music_flag = get_scene_music_flag(node, api)
+                call apply_music_flag
                 $ record_dialogue(speaker, text)
                 call screen reader_dialogue(speaker, text)
         elif node["type"] == "choice":
+            $ music_flag = get_scene_music_flag(node, api)
+            call apply_music_flag
             python:
                 choice_options, next_idx = collect_choice_options(active_war["script_nodes"], idx)
             if choice_options:
                 call screen reader_choice(choice_options)
             $ idx = next_idx - 1
-        elif apply_reader_node(node, api):
-            show screen vn_stage(current_background_path, current_scene_id, current_characters)
+        else:
+            $ music_flag = get_scene_music_flag(node, api)
+            call apply_music_flag
+            if not music_flag and apply_reader_node(node, api):
+                show screen vn_stage(current_background_path, current_scene_id, current_characters)
         $ idx += 1
 
     n "End of script."

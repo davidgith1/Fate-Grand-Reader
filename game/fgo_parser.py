@@ -24,7 +24,8 @@ def _strip_script_tags(text: str) -> tuple[str, dict[str, str]]:
             tags[tag_key] = value.strip()
         else:
             tag_key = token.strip().lower()
-            tags[tag_key] = ""
+            # Keep the full token so scene-time flags like "bgm BGM_EVENT_2 0.1" can be replayed.
+            tags[tag_key] = token
 
         if tag_key in LINE_BREAK_TAGS:
             return "\n"
@@ -47,6 +48,7 @@ def _parse_dialogue_line(line: str) -> tuple[str, str]:
 
 
 def _parse_command_node(token: str):
+    # Whole-line commands change reader state; inline tags stay attached to dialogue nodes.
     try:
         token_parts = shlex.split(token)
     except ValueError:
@@ -100,7 +102,6 @@ def parse_script_text(raw_text: str) -> list[dict[str, str]]:
         return nodes
 
     current_speaker = "Narrator"
-    current_speaker_slot = None
     for raw_line in raw_text.splitlines():
         line = raw_line.strip()
         if not line:
@@ -122,22 +123,11 @@ def parse_script_text(raw_text: str) -> list[dict[str, str]]:
                 nodes.append({"type": "metadata", "tags": tags})
             continue
         if line.startswith(("$", "\uff04")):
-            nodes.append({"type": "metadata", "tags": {"script_label": line}})
             continue
 
         if line.startswith(SPEAKER_MARKERS):
-            speaker_slot, text = _parse_dialogue_line(line)
-            current_speaker_slot = speaker_slot or None
-            current_speaker = text or speaker_slot or "Narrator"
-            nodes.append(
-                {
-                    "type": "metadata",
-                    "tags": {
-                        "speaker": current_speaker,
-                        "speaker_slot": current_speaker_slot or "",
-                    },
-                }
-            )
+            speaker_marker, text = _parse_dialogue_line(line)
+            current_speaker = text or speaker_marker or "Narrator"
             continue
 
         if line.startswith(CHOICE_MARKERS):
@@ -159,7 +149,6 @@ def parse_script_text(raw_text: str) -> list[dict[str, str]]:
             {
                 "type": "dialogue",
                 "speaker": current_speaker,
-                "speaker_slot": current_speaker_slot,
                 "text": line,
                 "tags": tags,
             }
