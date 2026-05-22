@@ -26,7 +26,7 @@ define SPEED = 0.5
 
 # Title Screens
 # These should change by part
-define titleScreen = "part1"
+define titleScreen = "part1" #so far part1 and part2 are only done
 define part1title =  "gui/title_wallpaper.png"
 define part1logo = "gui/logo_title.png"
 define part1terminal = "gui/warTerminal.png"
@@ -199,9 +199,9 @@ screen loading_screen(message):
         text message size 28
         text "Please wait..." size 22
     add "running_fou":
-            align(0.95,0.95)
+            align(0.95,0.90)
     add "gui/underbar.png":
-        align(1,0.95)
+        align(1,0.90)
         xsize(config.screen_width)
 
 
@@ -328,14 +328,18 @@ screen backlog_screen():
                         text entry.get("line") size 20 font "fonts/FGO-Main-Font.otf" substitute False
 
 screen settings_screen():
-    add "gui/settings.png" xysize (config.screen_width, config.screen_height)
-      
-    add "gui/settings_mask.png"
+    #The settings background
+    
+    add "gui/myRoom.png" xysize (config.screen_width, config.screen_height)
+    add "gui/settings.png":
+        xysize (config.screen_width,config.screen_height)
+        align (0.5, 0.5)
     modal True
     zorder 170
     
     frame:
-        align (0.5, 0.5)
+        background None
+        align (0.5, 0.2)
         xysize (440, 240)
         xpadding 22
         ypadding 18
@@ -343,25 +347,62 @@ screen settings_screen():
         
         has vbox
         spacing 15
+        xalign 0.5
         text "Settings":
             color "#000000"
             xalign 0.5
             size 34 
         frame:
-            align (0.5, 0.5)
-            xysize (440, 240)
-            xpadding 22
-            ypadding 18
-            add "gui/settings_textbox.png":
-                align(0.4,0.0)
+            xalign 0.5
+            background "gui/settings_textbox.png"
+            xysize (400, 110)
+            xpadding 20
+            ypadding 15
+            
+            has vbox
+            xalign 0.5
+            yalign 0.5
+            
             text "Music Volume":
-                align (0.5,0.2)
                 color "#000000"
                 size 22
-            bar value Preference("music volume") xmaximum 360
-        text "Sound Volume" size 22
-        bar value Preference("sound volume") xmaximum 360
-        textbutton "Close" action Hide("settings_screen")
+                xalign 0.5
+            bar value Preference("music volume"):
+                xmaximum 320
+                ysize 8
+                xalign 0.5
+                yalign 0.5
+                left_bar Solid("#3c78d8")
+                right_bar Solid("#d9d9d9")
+        
+        frame:
+            xalign 0.5
+            background "gui/settings_textbox.png"
+            xysize (400, 110)
+            xpadding 20
+            ypadding 15
+            
+            has vbox
+            xalign 0.5
+            yalign 0.5
+            
+            text "Sound Volume":
+                color "#000000"
+                size 22
+                xalign 0.5
+                
+            bar value Preference("sound volume"):
+                xmaximum 320
+                ysize 8
+                xalign 0.5
+                yalign 0.5
+                left_bar Solid("#3c78d8")
+                right_bar Solid("#d9d9d9")
+        textbutton "Close":
+            action Hide("settings_screen")
+            xalign 0.5
+            text_color "#ffffff"
+            text_hover_color "#a9d6ff"
 
 screen reader_nav():
     zorder 100
