@@ -265,13 +265,13 @@ screen vn_stage(background_path, scene_id, characters):
         add Solid("#111318")
 
     for chara in characters:
-        fixed at Transform(zoom=1.45):
+        fixed at Transform(zoom=1):
             xysize (1024, 768)
             xalign chara["xalign"]
             yalign 1.0
             # Sheets store the body at the top and expression tiles below it.
             add chara["path"] crop (0, 0, 1024, 768)
-            add chara["path"] crop chara_face_crop(chara["face"]) xpos 384 ypos 0
+            add chara["path"] crop chara_face_crop(chara["face"]) xpos 384 ypos 768
 
     if scene_id and not background_path:
         frame:
@@ -294,8 +294,9 @@ screen reader_dialogue(speaker, line):
         align (0.5, 1.0)
         xysize (760, 140)
         yoffset -2
-        add "gui/fgo_nameplate.png" xysize (int(config.screen_width * 0.2578125), int(config.screen_height * 0.0833333333)) ypos 4 # numbers come from dimensions of photo /1280
+        
         add "gui/fgo_textbox.png" xysize (int(config.screen_width * 0.8), int(config.screen_height * 0.2152777778)) ypos 4
+        add "gui/fgo_nameplate.png" xysize (int(config.screen_width * 0.2578125), int(config.screen_height * 0.0833333333)) ypos 4 # numbers come from dimensions of photo /1280
 
         if speaker and speaker != "Narrator":
             text speaker xpos 30 ypos 16 xmaximum 220 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
@@ -332,7 +333,8 @@ screen reader_choice(choices):
 screen backlog_screen():
     modal True
     zorder 160
-
+    add "gui/backlog.png":
+        xysize(config.screen_width,config.screen_height)
     frame:
         align (0.5, 0.5)
         xysize (720, 520)
@@ -542,7 +544,7 @@ screen war_select():
         add part1terminal:
             align(config.screen_width,config.screen_height)
     elif titleScreen == "part2":
-        add part2terminal:
+        add part1terminal:
             align(config.screen_width,config.screen_height)
     tag menu
     modal True
