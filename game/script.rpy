@@ -364,13 +364,22 @@ screen settings_screen():
             text "Music Volume : ":
                 size 22
                 xalign 0.5
-            bar value Preference("music volume"):
-                xmaximum 320
-                ysize 8
+            frame:
                 xalign 0.5
                 yalign 0.5
-                left_bar Solid("#3c78d8")
-                right_bar Solid("#d9d9d9")
+                xysize (320, 16)
+                bar value Preference("music volume"):
+                    base_bar Frame("gui/barFrame.png", Borders(4, 4, 4, 4))
+                    xmaximum 320
+                    ysize 10
+                    xalign 0.5
+                    yalign 0.5
+                    left_bar Frame("gui/progressBarfull.png", Borders(4, 4, 4, 4))
+                    right_bar Frame("gui/progressBarempty.png", Borders(4, 4, 4, 4))
+                add "gui/barFrame.png":
+                    xalign 0.5
+                    yalign 0.5
+                    xysize (320, 16)
         
         frame:
             xalign 0
@@ -387,14 +396,21 @@ screen settings_screen():
                 #color "#000000"
                 size 22
                 xalign 0.5
-                
-            bar value Preference("sound volume"):
-                xmaximum 320
-                ysize 8
+            frame:
                 xalign 0.5
                 yalign 0.5
-                left_bar Solid("#3c78d8")
-                right_bar Solid("#d9d9d9")
+                xysize (320, 16)
+                bar value Preference("sound volume"):
+                    xmaximum 320
+                    ysize 10
+                    xalign 0.5
+                    yalign 0.5
+                    left_bar Frame("gui/progressBarfull.png", Borders(4, 4, 4, 4))
+                    right_bar Frame("gui/progressBarempty.png", Borders(4, 4, 4, 4))
+                add "gui/barFrame.png":
+                    xalign 0.5
+                    yalign 0.5
+                    xysize (320, 16)
         textbutton "Close":
             action Hide("settings_screen")
             xalign 0.0
