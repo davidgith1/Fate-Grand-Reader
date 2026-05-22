@@ -271,7 +271,7 @@ screen vn_stage(background_path, scene_id, characters):
             yalign 1.0
             # Sheets store the body at the top and expression tiles below it.
             add chara["path"] crop (0, 0, 1024, 768)
-            add chara["path"] crop chara_face_crop(chara["face"]) xpos 384 ypos 768
+            add chara["path"] crop chara_face_crop(chara["face"]) xpos 384 ypos 0
 
     if scene_id and not background_path:
         frame:
