@@ -4,6 +4,18 @@ define n = Character(None)
 define config.screen_width = 1280
 define config.screen_height = 720
 
+# Calculate upscale ratio based on original game resolution so that it's always correct according to target resolution
+define original_screen_width = 1024
+define original_screen_height = 576
+define upscale_ratio = config.screen_width / original_screen_width
+
+# reader_dialogue screen variables
+define dialogue_default_color = '#ffffff'
+define dialogue_textbox_width = int(1024 * upscale_ratio)
+define dialogue_textbox_height = int(155 * upscale_ratio)
+define dialogue_nameplate_width = int(300 * upscale_ratio) 
+define dialogue_nameplate_height = int(48 * upscale_ratio) 
+
 # This can be used to change part.
 default active_war = None
 
@@ -292,16 +304,16 @@ screen reader_dialogue(speaker, line):
 
     fixed:
         align (0.5, 1.0)
-        xysize (760, 140)
-        yoffset -2
-        
-        add "gui/fgo_textbox.png" xysize (int(config.screen_width * 0.8), int(config.screen_height * 0.2152777778)) ypos 4
-        add "gui/fgo_nameplate.png" xysize (int(config.screen_width * 0.2578125), int(config.screen_height * 0.0833333333)) ypos 4 # numbers come from dimensions of photo /1280
+        xysize (dialogue_textbox_width, dialogue_textbox_height)
+
+        add "gui/img_talk_textbg.png" xysize (dialogue_textbox_width, dialogue_textbox_height) ypos -18
+        add "gui/img_talk_namebg.png" xysize (dialogue_nameplate_width, dialogue_nameplate_height) xpos 0 ypos -int(dialogue_nameplate_height - 8)
 
         if speaker and speaker != "Narrator":
-            text speaker xpos 30 ypos 16 xmaximum 220 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
+            text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False
 
-        text line xpos 48 ypos 68 xmaximum 650 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True
+        # ypos: nameplate height (int(48*1.25)=60) + 2px startPosition offset * 1.25 = ~63
+        text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True
 
     key "dismiss" action Return(True)
     key "K_SPACE" action Return(True)
