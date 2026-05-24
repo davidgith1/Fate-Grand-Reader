@@ -5,6 +5,18 @@ define config.screen_width = 1280
 define config.screen_height = 720
 define faceoffset = 150
 
+# Calculate upscale ratio based on original game resolution so that it's always correct according to target resolution
+define original_screen_width = 1024
+define original_screen_height = 576
+define upscale_ratio = config.screen_width / original_screen_width
+
+# reader_dialogue screen variables
+define dialogue_default_color = '#ffffff'
+define dialogue_textbox_width = int(1024 * upscale_ratio)
+define dialogue_textbox_height = int(155 * upscale_ratio)
+define dialogue_nameplate_width = int(300 * upscale_ratio) 
+define dialogue_nameplate_height = int(48 * upscale_ratio) 
+
 # This can be used to change part.
 default active_war = None
 
@@ -19,6 +31,8 @@ default backlog = []
 default current_reader_marker = None
 default resume_marker = None
 default menu_notice = ""
+default last_speaker = ""
+default last_line = ""
 default music_flag = None
 default music_path = ""
 default music_fade = 0.2
@@ -293,20 +307,36 @@ screen reader_dialogue(speaker, line):
 
     fixed:
         align (0.5, 1.0)
-        xysize (760, 140)
-        yoffset -2
-        
-        add "gui/fgo_textbox.png" xysize (int(config.screen_width * 0.8), int(config.screen_height * 0.2152777778)) ypos 4
-        add "gui/fgo_nameplate.png" xysize (int(config.screen_width * 0.2578125), int(config.screen_height * 0.0833333333)) ypos 4 # numbers come from dimensions of photo /1280
+        xysize (dialogue_textbox_width, dialogue_textbox_height)
+
+        add "gui/img_talk_textbg.png" xysize (dialogue_textbox_width, dialogue_textbox_height) ypos -18
+        add "gui/img_talk_namebg.png" xysize (dialogue_nameplate_width, dialogue_nameplate_height) xpos 0 ypos -int(dialogue_nameplate_height - 8)
 
         if speaker and speaker != "Narrator":
-            text speaker xpos 30 ypos 16 xmaximum 220 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
+            text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False
 
-        text line xpos 48 ypos 68 xmaximum 650 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True
+        # ypos: nameplate height (int(48*1.25)=60) + 2px startPosition offset * 1.25 = ~63
+        text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True
 
     key "dismiss" action Return(True)
     key "K_SPACE" action Return(True)
     key "K_RETURN" action Return(True)
+
+# TODO: This is extremely ugly code-wise, but it works (someone who knows renpy please fix) 
+screen reader_dialogue_static(speaker, line):
+    zorder 80
+
+    fixed:
+        align (0.5, 1.0)
+        xysize (dialogue_textbox_width, dialogue_textbox_height)
+
+        add "gui/img_talk_textbg.png" xysize (dialogue_textbox_width, dialogue_textbox_height) ypos -18
+        add "gui/img_talk_namebg.png" xysize (dialogue_nameplate_width, dialogue_nameplate_height) xpos 0 ypos -int(dialogue_nameplate_height - 8)
+
+        if speaker and speaker != "Narrator":
+            text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False
+
+        text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False
 
 screen reader_choice(choices):
     modal True
@@ -319,17 +349,17 @@ screen reader_choice(choices):
         action NullAction()
 
     vbox:
-        align (0.5, 0.58)
+        align (0.5, 0.28)
         spacing 10
 
         for i, choice in enumerate(choices):
             button:
-                xysize (650, 54)
+                xysize (int(970 * upscale_ratio), 90)
                 background Frame("gui/img_talk_selectbg.png", 18, 18)
                 hover_background Frame("gui/img_talk_selectbg.png", 18, 18)
                 action Return(i)
 
-                text choice xalign 0.5 yalign 0.5 xmaximum 610 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
+                text choice xalign 0.5 yalign 0.5 xmaximum 610 size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False
 
 screen backlog_screen():
     modal True
@@ -707,6 +737,8 @@ label play_war:
                                 $ music_flag = get_scene_music_flag(node, api)
                                 call apply_music_flag
                                 $ record_dialogue(speaker, text)
+                                $ last_speaker = speaker
+                                $ last_line = text
                                 call screen reader_dialogue(speaker, text)
                         elif node["type"] == "choice":
                             $ music_flag = get_scene_music_flag(node, api)
@@ -714,7 +746,9 @@ label play_war:
                             python:
                                 choice_options, next_idx = collect_choice_options(phase_nodes, idx)
                             if choice_options:
+                                show screen reader_dialogue_static(last_speaker, last_line)
                                 call screen reader_choice(choice_options)
+                                hide screen reader_dialogue_static
                             $ idx = next_idx - 1
                         else:
                             $ music_flag = get_scene_music_flag(node, api)
@@ -755,6 +789,8 @@ label play_war:
                 $ music_flag = get_scene_music_flag(node, api)
                 call apply_music_flag
                 $ record_dialogue(speaker, text)
+                $ last_speaker = speaker
+                $ last_line = text
                 call screen reader_dialogue(speaker, text)
         elif node["type"] == "choice":
             $ music_flag = get_scene_music_flag(node, api)
@@ -762,7 +798,9 @@ label play_war:
             python:
                 choice_options, next_idx = collect_choice_options(active_war["script_nodes"], idx)
             if choice_options:
+                show screen reader_dialogue_static(last_speaker, last_line)
                 call screen reader_choice(choice_options)
+                hide screen reader_dialogue_static
             $ idx = next_idx - 1
         else:
             $ music_flag = get_scene_music_flag(node, api)
