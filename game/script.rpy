@@ -3,7 +3,6 @@ define n = Character(None)
 # target resolution
 define config.screen_width = 1280
 define config.screen_height = 720
-define faceoffset = 150
 
 # Calculate upscale ratio based on original game resolution so that it's always correct according to target resolution
 define original_screen_width = 1024
@@ -137,11 +136,14 @@ init python:
 
     def chara_face_crop(face):
         try:
-            face_index = max(0, int(face))
+            face_index = max(1, int(face))
         except Exception:
-            face_index = 0
-        # Character sheets are 1024 wide: four 256px face tiles per row below the body.
-        return ((face_index % 4) * 256, 768 + (face_index // 4) * 256, 256, 256)
+            face_index = 1
+        # Character sheets are 1024 wide: four 256px face tiles per row below the 768px body.
+        zero_idx = face_index - 1
+        col = zero_idx % 4
+        row = zero_idx // 4
+        return (col * 256, 768 + row * 256, 256, 256)
 
     def apply_reader_node(node, api):
         node_type = node.get("type")
@@ -307,7 +309,8 @@ screen vn_stage(background_path, scene_id, characters):
             yalign 1.0
             # TODO: Unsure about the character-individual scaling here, would need to find a character whose scale value isn't 1 to test
             add chara["path"] crop (0, 0, 1024 * chara["scale"], 768 * chara["scale"]) xpos chara["position_offset"] + chara["offset_x"] ypos -chara["offset_y"]
-            add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["position_offset"] + chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"]
+            if chara["face"] != "0" and chara["face"] != 0:
+                add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["position_offset"] + chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"]
 
     if scene_id and not background_path:
         frame:
