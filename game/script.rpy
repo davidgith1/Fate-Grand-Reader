@@ -95,7 +95,18 @@ init python:
         if len(renpy.store.backlog) > 200:
             renpy.store.backlog = renpy.store.backlog[-200:]
 
-    def slot_xalign(slot, position=None):
+    # Maps FGO script position index to Unity pixel offset based on original 1024-wide resolution.
+    CHARA_POSITION_X_COORD = {
+        0: -256,  # Left
+        1:    0,  # Center
+        2:  256,  # Right
+        3: -438,  # Far left
+        4: -512,  # Furthest left
+        5:  438,  # Far right
+        6:  512,  # Furthest right
+    }
+
+    def get_slot_position_offset(slot, position=None):
         value = position
         if value is None:
             value = renpy.store.current_chara_defs.get(slot, {}).get("position")
@@ -103,7 +114,7 @@ init python:
             pos = int(value)
         except Exception:
             pos = 1
-        return {0: 0.24, 1: 0.5, 2: 0.76}.get(pos, 0.5)
+        return CHARA_POSITION_X_COORD.get(pos, 0)
 
     def refresh_visible_characters():
         visible = []
@@ -114,7 +125,7 @@ init python:
                         "slot": slot,
                         "path": data.get("path"),
                         "face": data.get("face") or "0",
-                        "xalign": slot_xalign(slot, data.get("position")),
+                        "position_offset": get_slot_position_offset(slot, data.get("position")),
                         "face_x": data.get("face_x", 0),
                         "face_y": data.get("face_y", 0),
                         "offset_x": data.get("offset_x", 0),
@@ -293,11 +304,10 @@ screen vn_stage(background_path, scene_id, characters):
     for chara in characters:
         fixed at Transform(zoom=upscale_ratio):
             xysize (original_screen_width, original_screen_height)
-            xalign chara["xalign"]
             yalign 1.0
             # TODO: Unsure about the character-individual scaling here, would need to find a character whose scale value isn't 1 to test
-            add chara["path"] crop (0, 0, 1024 * chara["scale"], 768 * chara["scale"]) xpos chara["offset_x"] ypos -chara["offset_y"]
-            add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"]
+            add chara["path"] crop (0, 0, 1024 * chara["scale"], 768 * chara["scale"]) xpos chara["position_offset"] + chara["offset_x"] ypos -chara["offset_y"]
+            add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["position_offset"] + chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"]
 
     if scene_id and not background_path:
         frame:
