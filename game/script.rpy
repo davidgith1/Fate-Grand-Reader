@@ -336,7 +336,7 @@ screen reader_dialogue(speaker, line):
         add "gui/img_talk_textbg.png" xysize (dialogue_textbox_width, dialogue_textbox_height) ypos -18
         add "gui/img_talk_namebg.png" xysize (dialogue_nameplate_width, dialogue_nameplate_height) xpos 0 ypos -int(dialogue_nameplate_height - 8)
 
-        if speaker and speaker != "Narrator":
+        if speaker:
             text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#000000aa", 1, 2)]
 
         text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True outlines [(1, "#00000066", 1, 1)]
@@ -356,7 +356,7 @@ screen reader_dialogue_static(speaker, line):
         add "gui/img_talk_textbg.png" xysize (dialogue_textbox_width, dialogue_textbox_height) ypos -18
         add "gui/img_talk_namebg.png" xysize (dialogue_nameplate_width, dialogue_nameplate_height) xpos 0 ypos -int(dialogue_nameplate_height - 8)
 
-        if speaker and speaker != "Narrator":
+        if speaker:
             text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#000000aa", 1, 2)]
 
         text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#00000066", 1, 1)]
@@ -754,7 +754,7 @@ label play_war:
                     while idx < len(phase_nodes):
                         $ node = phase_nodes[idx]
                         if node["type"] == "dialogue":
-                            $ speaker = node.get("speaker") or "Narrator"
+                            $ speaker = node.get("speaker") or ""
                             $ text = node.get("text") or ""
                             if text:
                                 $ music_flag = get_scene_music_flag(node, api)
@@ -773,6 +773,35 @@ label play_war:
                                 call screen reader_choice(choice_options)
                                 hide screen reader_dialogue_static
                             $ idx = next_idx - 1
+                        elif node["type"] == "choice_block":
+                            python:
+                                cb_choices = node.get("choices", [])
+                                cb_texts = [normalize_choice_text(c.get("text", "")) for c in cb_choices]
+                            if cb_texts:
+                                show screen reader_dialogue_static(last_speaker, last_line)
+                                call screen reader_choice(cb_texts)
+                                hide screen reader_dialogue_static
+                                python:
+                                    selected_branch_nodes = cb_choices[_return].get("nodes", []) if _return is not None and _return < len(cb_choices) else []
+                                $ branch_idx = 0
+                                while branch_idx < len(selected_branch_nodes):
+                                    $ branch_node = selected_branch_nodes[branch_idx]
+                                    if branch_node["type"] == "dialogue":
+                                        $ bspeaker = branch_node.get("speaker") or ""
+                                        $ btext = branch_node.get("text") or ""
+                                        if btext:
+                                            $ music_flag = get_scene_music_flag(branch_node, api)
+                                            call apply_music_flag
+                                            $ record_dialogue(bspeaker, btext)
+                                            $ last_speaker = bspeaker
+                                            $ last_line = btext
+                                            call screen reader_dialogue(bspeaker, btext)
+                                    else:
+                                        $ music_flag = get_scene_music_flag(branch_node, api)
+                                        call apply_music_flag
+                                        if not music_flag and apply_reader_node(branch_node, api):
+                                            show screen vn_stage(current_background_path, current_scene_id, current_characters)
+                                    $ branch_idx += 1
                         else:
                             $ music_flag = get_scene_music_flag(node, api)
                             call apply_music_flag
@@ -806,7 +835,7 @@ label play_war:
     while idx < len(active_war["script_nodes"]):
         $ node = active_war["script_nodes"][idx]
         if node["type"] == "dialogue":
-            $ speaker = node.get("speaker") or "Narrator"
+            $ speaker = node.get("speaker") or ""
             $ text = node.get("text") or ""
             if text:
                 $ music_flag = get_scene_music_flag(node, api)
@@ -825,6 +854,35 @@ label play_war:
                 call screen reader_choice(choice_options)
                 hide screen reader_dialogue_static
             $ idx = next_idx - 1
+        elif node["type"] == "choice_block":
+            python:
+                cb_choices = node.get("choices", [])
+                cb_texts = [normalize_choice_text(c.get("text", "")) for c in cb_choices]
+            if cb_texts:
+                show screen reader_dialogue_static(last_speaker, last_line)
+                call screen reader_choice(cb_texts)
+                hide screen reader_dialogue_static
+                python:
+                    selected_branch_nodes = cb_choices[_return].get("nodes", []) if _return is not None and _return < len(cb_choices) else []
+                $ branch_idx = 0
+                while branch_idx < len(selected_branch_nodes):
+                    $ branch_node = selected_branch_nodes[branch_idx]
+                    if branch_node["type"] == "dialogue":
+                        $ bspeaker = branch_node.get("speaker") or ""
+                        $ btext = branch_node.get("text") or ""
+                        if btext:
+                            $ music_flag = get_scene_music_flag(branch_node, api)
+                            call apply_music_flag
+                            $ record_dialogue(bspeaker, btext)
+                            $ last_speaker = bspeaker
+                            $ last_line = btext
+                            call screen reader_dialogue(bspeaker, btext)
+                    else:
+                        $ music_flag = get_scene_music_flag(branch_node, api)
+                        call apply_music_flag
+                        if not music_flag and apply_reader_node(branch_node, api):
+                            show screen vn_stage(current_background_path, current_scene_id, current_characters)
+                    $ branch_idx += 1
         else:
             $ music_flag = get_scene_music_flag(node, api)
             call apply_music_flag

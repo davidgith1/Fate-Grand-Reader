@@ -8,6 +8,7 @@ SPEAKER_MARKERS = ("\uff20", "@", "\xef\xbc\xa0")
 CHOICE_MARKERS = ("\uff1f", "?", "\xef\xbc\x9f")
 FULLWIDTH_COLONS = ("\uff1a", "\xef\xbc\x9a")
 MUSIC_MARKERS = ("\u266a", "\u266b", "\xe2\x99\xaa", "\xe2\x99\xac")
+CHOICE_END_TEXT = ("\uff01", "!") 
 
 
 def _strip_script_tags(text: str) -> tuple[str, dict[str, str]]:
@@ -96,15 +97,83 @@ def _parse_command_node(token: str):
     return None
 
 
-def parse_script_text(raw_text: str) -> list[dict[str, str]]:
-    nodes: list[dict[str, str]] = []
-    if not raw_text:
-        return nodes
+def _is_choice_end_marker(line: str) -> bool:
+    return line[1:].strip() in CHOICE_END_TEXT
 
-    current_speaker = "Narrator"
-    for raw_line in raw_text.splitlines():
-        line = raw_line.strip()
+
+def _collect_choice_branches(block_lines: list[str]) -> list[dict]:
+    """Returns a list of dicts::
+        {"text": str, "tags": dict, "branch_lines": list[str]}
+    """
+    branches: list[dict] = []
+    current_text: str | None = None
+    current_tags: dict = {}
+    current_branch: list[str] = []
+
+    for line in block_lines:
+        if line.startswith(CHOICE_MARKERS) and not _is_choice_end_marker(line):
+            if current_text is not None:
+                branches.append(
+                    {"text": current_text, "tags": current_tags, "branch_lines": current_branch}
+                )
+            stripped, tags = _strip_script_tags(line)
+            current_text = stripped[1:].strip()
+            current_tags = tags
+            current_branch = []
+        else:
+            if current_text is not None:
+                current_branch.append(line)
+
+    if current_text is not None:
+        branches.append(
+            {"text": current_text, "tags": current_tags, "branch_lines": current_branch}
+        )
+    return branches
+
+
+def _parse_lines(lines: list[str], initial_speaker: str = "") -> tuple[list[dict], str]:
+    nodes: list[dict] = []
+    current_speaker = initial_speaker
+    i = 0
+
+    while i < len(lines):
+        line = lines[i]
         if not line:
+            i += 1
+            continue
+
+        # ？！ end-of-choices marker appearing outside a block — skip.
+        if line.startswith(CHOICE_MARKERS) and _is_choice_end_marker(line):
+            i += 1
+            continue
+
+        # Choice start: collect the entire block up to the ？！ end marker.
+        if line.startswith(CHOICE_MARKERS):
+            block_end = len(lines)
+            for j in range(i, len(lines)):
+                if lines[j].startswith(CHOICE_MARKERS) and _is_choice_end_marker(lines[j]):
+                    block_end = j
+                    break
+
+            block_lines = lines[i:block_end]
+            branches = _collect_choice_branches(block_lines)
+            has_branch_content = any(any(l for l in b["branch_lines"]) for b in branches)
+
+            if has_branch_content:
+                parsed_choices = []
+                for branch in branches:
+                    branch_nodes, _ = _parse_lines(branch["branch_lines"], current_speaker)
+                    parsed_choices.append(
+                        {"text": branch["text"], "tags": branch["tags"], "nodes": branch_nodes}
+                    )
+                nodes.append({"type": "choice_block", "choices": parsed_choices})
+            else:
+                for branch in branches:
+                    nodes.append(
+                        {"type": "choice", "text": branch["text"], "tags": branch["tags"]}
+                    )
+
+            i = block_end + 1
             continue
 
         if line.startswith("[") and line.endswith("]"):
@@ -113,33 +182,26 @@ def parse_script_text(raw_text: str) -> list[dict[str, str]]:
             command_node = _parse_command_node(token)
             if command_node:
                 nodes.append(command_node)
+                i += 1
                 continue
             if token_lower in PAGE_TOKENS:
+                i += 1
                 continue
 
         line, tags = _strip_script_tags(line)
         if not line:
             if tags:
                 nodes.append({"type": "metadata", "tags": tags})
+            i += 1
             continue
         if line.startswith(("$", "\uff04")):
+            i += 1
             continue
 
         if line.startswith(SPEAKER_MARKERS):
             speaker_marker, text = _parse_dialogue_line(line)
-            current_speaker = text or speaker_marker or "Narrator"
-            continue
-
-        if line.startswith(CHOICE_MARKERS):
-            choice_text = line[1:].strip()
-            if choice_text:
-                nodes.append(
-                    {
-                        "type": "choice",
-                        "text": choice_text,
-                        "tags": tags,
-                    }
-                )
+            current_speaker = text or speaker_marker or ""
+            i += 1
             continue
 
         if line.startswith(MUSIC_MARKERS):
@@ -153,5 +215,14 @@ def parse_script_text(raw_text: str) -> list[dict[str, str]]:
                 "tags": tags,
             }
         )
+        i += 1
 
+    return nodes, current_speaker
+
+
+def parse_script_text(raw_text: str) -> list[dict[str, str]]:
+    if not raw_text:
+        return []
+    lines = [line.strip() for line in raw_text.splitlines()]
+    nodes, _ = _parse_lines(lines)
     return nodes
