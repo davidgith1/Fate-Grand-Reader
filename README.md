@@ -29,3 +29,4 @@ This Ren'Py project is an initial implementation of a Fate/Grand Order visual no
 - Add a scrollable war selection UI
 - Add background and character asset download/render support
 - Improve parser support for additional FGO script tags and visual commands
+- Add support for other languages 
