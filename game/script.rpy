@@ -373,7 +373,7 @@ screen reader_choice(choices):
 
     vbox:
         align (0.5, 0.28)
-        spacing 10
+        spacing 13
 
         for i, choice in enumerate(choices):
             button:
@@ -382,7 +382,7 @@ screen reader_choice(choices):
                 hover_background Frame("gui/img_talk_selectbg.png", 18, 18)
                 action Return(i)
 
-                text choice xalign 0.5 yalign 0.5 xmaximum 610 size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False
+                text choice xalign 0.5 yalign 0.5 xmaximum (int(970 * upscale_ratio) - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#00000066", 1, 1)]
 
 screen backlog_screen():
     modal True
