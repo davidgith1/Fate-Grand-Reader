@@ -115,6 +115,11 @@ init python:
                         "path": data.get("path"),
                         "face": data.get("face") or "0",
                         "xalign": slot_xalign(slot, data.get("position")),
+                        "face_x": data.get("face_x", 0),
+                        "face_y": data.get("face_y", 0),
+                        "offset_x": data.get("offset_x", 0),
+                        "offset_y": data.get("offset_y", 0),
+                        "scale": data.get("scale", 1)
                     }
                 )
         renpy.store.current_characters = visible
@@ -139,6 +144,7 @@ init python:
             if slot:
                 # Keep the sheet; the stage crops the body and overlays face 0.
                 char_path = api.get_character_path(node.get("chara_id"))
+                offsets = api.get_chara_script_offsets(node.get("chara_id")) or {}
                 renpy.store.current_chara_defs[slot] = {
                     "id": node.get("chara_id"),
                     "name": node.get("name"),
@@ -146,6 +152,11 @@ init python:
                     "face": "0",
                     "path": char_path.replace("\\", "/") if char_path else None,
                     "visible": False,
+                    "face_x": offsets.get("face_x"),
+                    "face_y": offsets.get("face_y"),
+                    "offset_x": offsets.get("offset_x"),
+                    "offset_y": offsets.get("offset_y"),
+                    "scale": offsets.get("scale")
                 }
                 refresh_visible_characters()
             return True
@@ -280,13 +291,13 @@ screen vn_stage(background_path, scene_id, characters):
         add Solid("#111318")
 
     for chara in characters:
-        fixed at Transform(zoom=1):
-            xysize (1024, 768)
+        fixed at Transform(zoom=upscale_ratio):
+            xysize (original_screen_width, original_screen_height)
             xalign chara["xalign"]
             yalign 1.0
-            # Sheets store the body at the top and expression tiles below it.
-            add chara["path"] crop (0, 0, 1024, 768)
-            add chara["path"] crop chara_face_crop(chara["face"]) xpos 384 ypos faceoffset
+            # TODO: Unsure about the character-individual scaling here, would need to find a character whose scale value isn't 1 to test
+            add chara["path"] crop (0, 0, 1024 * chara["scale"], 768 * chara["scale"]) xpos chara["offset_x"] ypos -chara["offset_y"]
+            add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"]
 
     if scene_id and not background_path:
         frame:
@@ -315,7 +326,6 @@ screen reader_dialogue(speaker, line):
         if speaker and speaker != "Narrator":
             text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False
 
-        # ypos: nameplate height (int(48*1.25)=60) + 2px startPosition offset * 1.25 = ~63
         text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True
 
     key "dismiss" action Return(True)
