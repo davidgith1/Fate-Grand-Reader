@@ -174,6 +174,22 @@ class AtlasAPI:
         url = f"{self.STATIC_BASE_URL}/{self.region}/CharaFigure/{chara_id}/{chara_id}_merged.png"
         return self.get_cached_asset(url, force_refresh=force_refresh)
 
+    def get_chara_script_offsets(self, chara_id: str, force_refresh: bool = False):
+        if not chara_id:
+            return None
+        url = self._build_url("raw/JP/svtScript", {"charaId": str(chara_id)})
+        data = self.fetch_json(url, force_refresh)
+        if not data or not isinstance(data, list):
+            return None
+        entry = next((e for e in data if e.get("id") == 0), data[0])
+        return {
+            "face_x": entry.get("faceX", 0),
+            "face_y": entry.get("faceY", 0),
+            "offset_x": entry.get("offsetX", 0),
+            "offset_y": entry.get("offsetY", 0),
+            "scale": entry.get("scale", 1)
+        }
+
     def get_bgm_path(self, bgm_name: str, force_refresh: bool = False):
         if not bgm_name:
             return None
