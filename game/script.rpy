@@ -10,8 +10,8 @@ define original_screen_height = 576
 define upscale_ratio = config.screen_width / original_screen_width
 
 #language selection
-#en for english,jp for japanese 
-define lang = 'en' 
+#NA for english,JP for japanese 
+define lang = 'NA' 
 # reader_dialogue screen variables
 define dialogue_default_color = '#ffffff'
 define dialogue_textbox_width = int(1024 * upscale_ratio)
@@ -508,29 +508,43 @@ screen settings_screen():
             text "Language : ":
                 size 22
                 xalign 0.5
-                
+            # English Language selector 
             frame:
                 yalign 0.5
-                background Solid("#ffffff" if lang == "en" else "#555555")
+                background Solid("#ffffff" if lang == "NA" else "#555555")
                 xpadding 20
                 ypadding 10
                 
                 textbutton "English":
                     action NullAction()
-                    text_color ("#befbff" if lang == "en" else "#ffffff")
+                    text_color ("#befbff" if lang == "NA" else "#ffffff")
                     text_size 22
                     text_hover_color "#2c465e"
+            #Japanese
             frame:
                 yalign 0.5
-                background Solid("#ffffff" if lang == "jp" else "#555555")
+                background Solid("#ffffff" if lang == "JP" else "#555555")
                 xpadding 20
                 ypadding 10
                 
                 textbutton "Japanease":
                     action NullAction()
-                    text_color ("#befbff" if lang == "jp" else "#ffffff")
+                    text_color ("#befbff" if lang == "JP" else "#ffffff")
                     text_size 22
                     text_hover_color "#2c465e"
+        #For Rayshift Fan Translation
+        frame:
+            xalign 0
+            xysize (400, 110)
+            xpadding 20
+            ypadding 15
+            
+            has hbox
+            yalign 0.5
+            spacing 25
+            text "Rayshift : ":
+                size 22
+                xalign 0.5
         textbutton "Close":
             action Hide("settings_screen")
             xalign 0.0

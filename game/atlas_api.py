@@ -16,6 +16,7 @@ class AtlasAPI:
     with open(_config_path, 'r', encoding='utf-8') as file:
             config = json.load(file)
     lang = config.get('language', 'NA')
+    rayshift = config.get('Rayshift','Yes')
     API_BASE_URL = "https://api.atlasacademy.io"
     STATIC_BASE_URL = "https://static.atlasacademy.io"
     EXPORT_WAR_LIST_PATH = f"export/{lang}/nice_war.json"
