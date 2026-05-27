@@ -2,6 +2,7 @@ import json
 import ssl
 import urllib.parse
 import urllib.request
+import os
 from urllib.error import HTTPError, URLError
 
 from cache import CacheManager
@@ -9,12 +10,18 @@ from fgo_parser import parse_script_text
 
 
 class AtlasAPI:
+    _base_dir = os.path.dirname(__file__)
+    _config_path = os.path.join(_base_dir, 'config.json')
+
+    with open(_config_path, 'r', encoding='utf-8') as file:
+            config = json.load(file)
+    lang = config.get('language', 'NA')
     API_BASE_URL = "https://api.atlasacademy.io"
     STATIC_BASE_URL = "https://static.atlasacademy.io"
-    EXPORT_WAR_LIST_PATH = "export/NA/nice_war.json"
-    EXPORT_BGM_LIST_PATH = "export/NA/nice_bgm.json"
+    EXPORT_WAR_LIST_PATH = f"export/{lang}/nice_war.json"
+    EXPORT_BGM_LIST_PATH = f"export/{lang}/nice_bgm.json"
 
-    def __init__(self, region: str = "NA", lang: str = "en"):
+    def __init__(self, region: str = lang, lang: str = "en"):
         self.region = region
         self.lang = lang
         self.cache = CacheManager()
