@@ -11,7 +11,7 @@ define upscale_ratio = config.screen_width / original_screen_width
 
 #language selection
 #NA for english,JP for japanese 
-define lang = 'NA' 
+define lang = 'JP' 
 # reader_dialogue screen variables
 define dialogue_default_color = '#ffffff'
 define dialogue_textbox_width = int(1024 * upscale_ratio)
@@ -46,7 +46,8 @@ define SPEED = 0.5
 # These should change by part
 define titleScreen = "part1" #so far part1 and part2 are only done
 define part1title =  "gui/title_wallpaper.png"
-define part1logo = "gui/logo_title.png"
+define part1logoNA = "gui/NAPart1Logo.png"
+define part1logoJP = "gui/JPPart1Logo.png"
 define part1terminal = "gui/warTerminal.png"
 define part2title = "gui/part2title.png"
 define part2logo = "gui/logo_title_cil.png"
@@ -576,8 +577,10 @@ screen title_menu():
     if titleScreen == "part1":
         add part1title:
             xysize (config.screen_width, config.screen_height) crop (20, 0, config.screen_width, config.screen_height)
-        add part1logo:
-            align (0.5, 0.25)
+        if lang == 'JP':
+            add part1logoJP align (0.5, 0.25)
+        else:
+            add part1logoNA align (0.5, 0.25)
     elif titleScreen == "part2":
         add part2title:
             xysize (config.screen_width*2, config.screen_height*2) crop (20, 0.0, config.screen_width, config.screen_height)
