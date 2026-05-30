@@ -11,7 +11,7 @@ define upscale_ratio = config.screen_width / original_screen_width
 
 #language selection
 #NA for english,JP for japanese 
-define lang = 'JP' 
+define lang = 'NA' 
 # reader_dialogue screen variables
 define dialogue_default_color = '#ffffff'
 define dialogue_textbox_width = int(1024 * upscale_ratio)
@@ -675,27 +675,77 @@ screen war_select():
                 vbox:
                     for war in war_list:
                         # Show the Atlas banner as the war select button.
-                        $ title = war.get("longName") or war.get("name") or "Unnamed War"
-                        $ banner = war.get("banner")
-                        if banner:
-                            imagebutton:
-                                idle banner
-                                hover banner
-                                action [SetVariable("selected_war_id", war.get("id")), Return(True)]
-                                xsize 600
-                                ysize 120
-                        else:
-                            textbutton title:
-                                action [SetVariable("selected_war_id", war.get("id")), Return(True)]
-                                text_color "#000000"
-                        null height 8
+                        $ war_id = war.get("id")
+        
+                        if war_id and (war_id // 1000 >= 11) and (war_id % 1000 == 0):
+                            $ valueID =  war_id // 1000 - 10
+                            $ title = war.get("longName") or war.get("name") or "Unnamed War"
+                            $ banner = war.get("banner")
+                        
+                            if banner:
+                                imagebutton:
+                                    idle banner
+                                    hover banner
+                                    action Show("war_selectMainStory", target_id=valueID)
+                                    xsize 600
+                                    ysize 120
+                            else:
+                                textbutton title:
+                                    action Show("war_selectMainStory", target_id=valueID)
+                                    text_color "#000000"
+                            null height 8
                         
 
         hbox:
             spacing 16
             textbutton "Refresh" action [SetVariable("war_list", []), SetVariable("war_load_error", None), Return(False)]
             textbutton "Quit" action Quit(confirm=False)
+screen war_selectMainStory(target_id):
+    add Solid("#000000")
+    zorder 0
+    add part1terminal:
+        align(config.screen_width,config.screen_height)
+    tag menu
+    modal True
+    frame:
+        align (0.5, 0.5)
+        xpadding 20
+        ypadding 20
+        xmaximum 900
+        ymaximum 700
+        has vbox
 
+        text "Select a War" size 36
+
+        if war_load_error:
+            text war_load_error size 24 substitute False
+            textbutton "Retry" action Return(False)
+        else:
+            viewport id "war_list_view" mousewheel True draggable True:
+                vbox:
+                    for war in war_list:
+                        $ war_id = war.get("id")
+                        if war_id and (war_id // 100 == target_id ):
+                            $ title = war.get("longName") or war.get("name") or "Unnamed War"
+                            $ banner = war.get("banner")
+                        
+                            if banner:
+                                imagebutton:
+                                    idle banner
+                                    hover banner
+                                    action [SetVariable("selected_war_id", war_id), Return(True)]
+                                    xsize 600
+                                    ysize 120
+                            else:
+                                textbutton title:
+                                    action [SetVariable("selected_war_id",  war_id), Return(True)]
+                                    text_color "#000000"
+                            null height 8
+        hbox:
+            spacing 16
+            textbutton "Return" action Show("war_select")
+            textbutton "Refresh" action [SetVariable("war_list", []), SetVariable("war_load_error", None), Return(False)]
+            textbutton "Quit" action Quit(confirm=False)
 label start:
     $ menu_notice = ""
     call screen title_menu
