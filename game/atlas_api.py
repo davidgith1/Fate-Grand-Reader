@@ -10,13 +10,16 @@ from fgo_parser import parse_script_text
 
 
 class AtlasAPI:
+    # To read Config.json
     _base_dir = os.path.dirname(__file__)
     _config_path = os.path.join(_base_dir, 'config.json')
 
     with open(_config_path, 'r', encoding='utf-8') as file:
             config = json.load(file)
+    # Defining variable from config with form <var_name> = config.get("data","default value")
     lang = config.get('language', 'NA')
     rayshift = config.get('Rayshift','Yes')
+    #API URLS
     API_BASE_URL = "https://api.atlasacademy.io"
     STATIC_BASE_URL = "https://static.atlasacademy.io"
     EXPORT_WAR_LIST_PATH = f"export/{lang}/nice_war.json"
