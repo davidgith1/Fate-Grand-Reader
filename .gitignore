@@ -5,3 +5,6 @@ game/cache
 game/saves
 game/__pycache__
 *.rpyc
+game/script.rpyc
+game/script.rpyc
+game/saves/navigation.json
