@@ -4,6 +4,21 @@ define n = Character(None)
 define config.screen_width = 1280
 define config.screen_height = 720
 
+# Calculate upscale ratio based on original game resolution so that it's always correct according to target resolution
+define original_screen_width = 1024
+define original_screen_height = 576
+define upscale_ratio = config.screen_width / original_screen_width
+
+#language selection
+#NA for english,JP for japanese 
+define lang = 'NA' 
+# reader_dialogue screen variables
+define dialogue_default_color = '#ffffff'
+define dialogue_textbox_width = int(1024 * upscale_ratio)
+define dialogue_textbox_height = int(155 * upscale_ratio)
+define dialogue_nameplate_width = int(300 * upscale_ratio) 
+define dialogue_nameplate_height = int(48 * upscale_ratio) 
+
 # This can be used to change part.
 default active_war = None
 
@@ -18,6 +33,8 @@ default backlog = []
 default current_reader_marker = None
 default resume_marker = None
 default menu_notice = ""
+default last_speaker = ""
+default last_line = ""
 default music_flag = None
 default music_path = ""
 default music_fade = 0.2
@@ -29,7 +46,8 @@ define SPEED = 0.5
 # These should change by part
 define titleScreen = "part1" #so far part1 and part2 are only done
 define part1title =  "gui/title_wallpaper.png"
-define part1logo = "gui/logo_title.png"
+define part1logoNA = "gui/NAPart1Logo.png"
+define part1logoJP = "gui/JPPart1Logo.png"
 define part1terminal = "gui/warTerminal.png"
 define part2title = "gui/part2title.png"
 define part2logo = "gui/logo_title_cil.png"
@@ -80,7 +98,18 @@ init python:
         if len(renpy.store.backlog) > 200:
             renpy.store.backlog = renpy.store.backlog[-200:]
 
-    def slot_xalign(slot, position=None):
+    # Maps FGO script position index to Unity pixel offset based on original 1024-wide resolution.
+    CHARA_POSITION_X_COORD = {
+        0: -256,  # Left
+        1:    0,  # Center
+        2:  256,  # Right
+        3: -438,  # Far left
+        4: -512,  # Furthest left
+        5:  438,  # Far right
+        6:  512,  # Furthest right
+    }
+
+    def get_slot_position_offset(slot, position=None):
         value = position
         if value is None:
             value = renpy.store.current_chara_defs.get(slot, {}).get("position")
@@ -88,7 +117,7 @@ init python:
             pos = int(value)
         except Exception:
             pos = 1
-        return {0: 0.24, 1: 0.5, 2: 0.76}.get(pos, 0.5)
+        return CHARA_POSITION_X_COORD.get(pos, 0)
 
     def refresh_visible_characters():
         visible = []
@@ -99,18 +128,26 @@ init python:
                         "slot": slot,
                         "path": data.get("path"),
                         "face": data.get("face") or "0",
-                        "xalign": slot_xalign(slot, data.get("position")),
+                        "position_offset": get_slot_position_offset(slot, data.get("position")),
+                        "face_x": data.get("face_x", 0),
+                        "face_y": data.get("face_y", 0),
+                        "offset_x": data.get("offset_x", 0),
+                        "offset_y": data.get("offset_y", 0),
+                        "scale": data.get("scale", 1)
                     }
                 )
         renpy.store.current_characters = visible
 
     def chara_face_crop(face):
         try:
-            face_index = max(0, int(face))
+            face_index = max(1, int(face))
         except Exception:
-            face_index = 0
-        # Character sheets are 1024 wide: four 256px face tiles per row below the body.
-        return ((face_index % 4) * 256, 768 + (face_index // 4) * 256, 256, 256)
+            face_index = 1
+        # Character sheets are 1024 wide: four 256px face tiles per row below the 768px body.
+        zero_idx = face_index - 1
+        col = zero_idx % 4
+        row = zero_idx // 4
+        return (col * 256, 768 + row * 256, 256, 256)
 
     def apply_reader_node(node, api):
         node_type = node.get("type")
@@ -124,6 +161,7 @@ init python:
             if slot:
                 # Keep the sheet; the stage crops the body and overlays face 0.
                 char_path = api.get_character_path(node.get("chara_id"))
+                offsets = api.get_chara_script_offsets(node.get("chara_id")) or {}
                 renpy.store.current_chara_defs[slot] = {
                     "id": node.get("chara_id"),
                     "name": node.get("name"),
@@ -131,6 +169,11 @@ init python:
                     "face": "0",
                     "path": char_path.replace("\\", "/") if char_path else None,
                     "visible": False,
+                    "face_x": offsets.get("face_x"),
+                    "face_y": offsets.get("face_y"),
+                    "offset_x": offsets.get("offset_x"),
+                    "offset_y": offsets.get("offset_y"),
+                    "scale": offsets.get("scale")
                 }
                 refresh_visible_characters()
             return True
@@ -265,13 +308,13 @@ screen vn_stage(background_path, scene_id, characters):
         add Solid("#111318")
 
     for chara in characters:
-        fixed at Transform(zoom=1.45):
-            xysize (1024, 768)
-            xalign chara["xalign"]
+        fixed at Transform(zoom=upscale_ratio):
+            xysize (original_screen_width, original_screen_height)
             yalign 1.0
-            # Sheets store the body at the top and expression tiles below it.
-            add chara["path"] crop (0, 0, 1024, 768)
-            add chara["path"] crop chara_face_crop(chara["face"]) xpos 384 ypos 0
+            # TODO: Unsure about the character-individual scaling here, would need to find a character whose scale value isn't 1 to test
+            add chara["path"] crop (0, 0, 1024 * chara["scale"], 768 * chara["scale"]) xpos chara["position_offset"] + chara["offset_x"] ypos -chara["offset_y"]
+            if chara["face"] != "0" and chara["face"] != 0:
+                add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["position_offset"] + chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"]
 
     if scene_id and not background_path:
         frame:
@@ -292,19 +335,35 @@ screen reader_dialogue(speaker, line):
 
     fixed:
         align (0.5, 1.0)
-        xysize (760, 140)
-        yoffset -2
-        add "gui/fgo_nameplate.png" xysize (int(config.screen_width * 0.2578125), int(config.screen_height * 0.0833333333)) ypos 4 # numbers come from dimensions of photo /1280
-        add "gui/fgo_textbox.png" xysize (int(config.screen_width * 0.8), int(config.screen_height * 0.2152777778)) ypos 4
+        xysize (dialogue_textbox_width, dialogue_textbox_height)
 
-        if speaker and speaker != "Narrator":
-            text speaker xpos 30 ypos 16 xmaximum 220 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
+        add "gui/img_talk_textbg.png" xysize (dialogue_textbox_width, dialogue_textbox_height) ypos -18
+        add "gui/img_talk_namebg.png" xysize (dialogue_nameplate_width, dialogue_nameplate_height) xpos 0 ypos -int(dialogue_nameplate_height - 8)
 
-        text line xpos 48 ypos 68 xmaximum 650 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True
+        if speaker:
+            text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#000000aa", 1, 2)]
+
+        text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False slow_cps 85 slow_abortable True outlines [(1, "#00000066", 1, 1)]
 
     key "dismiss" action Return(True)
     key "K_SPACE" action Return(True)
     key "K_RETURN" action Return(True)
+
+# TODO: This is extremely ugly code-wise, but it works (someone who knows renpy please fix) 
+screen reader_dialogue_static(speaker, line):
+    zorder 80
+
+    fixed:
+        align (0.5, 1.0)
+        xysize (dialogue_textbox_width, dialogue_textbox_height)
+
+        add "gui/img_talk_textbg.png" xysize (dialogue_textbox_width, dialogue_textbox_height) ypos -18
+        add "gui/img_talk_namebg.png" xysize (dialogue_nameplate_width, dialogue_nameplate_height) xpos 0 ypos -int(dialogue_nameplate_height - 8)
+
+        if speaker:
+            text speaker xpos 30 ypos (-int(dialogue_nameplate_height - 8) + (dialogue_nameplate_height - int(29 * upscale_ratio)) // 2) xmaximum (dialogue_nameplate_width - 30) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#000000aa", 1, 2)]
+
+        text line xpos int(72 * upscale_ratio) ypos int(dialogue_nameplate_height / 2) xmaximum (dialogue_textbox_width - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) line_leading int(15 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#00000066", 1, 1)]
 
 screen reader_choice(choices):
     modal True
@@ -317,22 +376,23 @@ screen reader_choice(choices):
         action NullAction()
 
     vbox:
-        align (0.5, 0.58)
-        spacing 10
+        align (0.5, 0.28)
+        spacing 13
 
         for i, choice in enumerate(choices):
             button:
-                xysize (650, 54)
+                xysize (int(970 * upscale_ratio), 90)
                 background Frame("gui/img_talk_selectbg.png", 18, 18)
                 hover_background Frame("gui/img_talk_selectbg.png", 18, 18)
                 action Return(i)
 
-                text choice xalign 0.5 yalign 0.5 xmaximum 610 size 22 color "#ffffff" font "fonts/FGO-Main-Font.otf" substitute False
+                text choice xalign 0.5 yalign 0.5 xmaximum (int(970 * upscale_ratio) - (int(72 * upscale_ratio) * 2)) size int(29 * upscale_ratio) color dialogue_default_color font "fonts/FGO-Main-Font.otf" substitute False outlines [(1, "#00000066", 1, 1)]
 
 screen backlog_screen():
     modal True
     zorder 160
-
+    add "gui/backlog.png":
+        xysize(config.screen_width,config.screen_height)
     frame:
         align (0.5, 0.5)
         xysize (720, 520)
@@ -406,10 +466,9 @@ screen settings_screen():
                     xalign 0.5
                     yalign 0.5
                     xysize (320, 16)
-        
+        #Sound Row
         frame:
             xalign 0
-            #background "gui/settings_textbox.png"
             xysize (400, 110)
             xpadding 20
             ypadding 15
@@ -437,11 +496,61 @@ screen settings_screen():
                     xalign 0.5
                     yalign 0.5
                     xysize (320, 16)
+        #Language Selector
+        frame:
+            xalign 0
+            xysize (400, 110)
+            xpadding 20
+            ypadding 15
+            
+            has hbox
+            yalign 0.5
+            spacing 25
+            text "Language : ":
+                size 22
+                xalign 0.5
+            # English Language selector 
+            frame:
+                yalign 0.5
+                background Solid("#ffffff" if lang == "NA" else "#555555")
+                xpadding 20
+                ypadding 10
+                
+                textbutton "English":
+                    action NullAction()
+                    text_color ("#befbff" if lang == "NA" else "#ffffff")
+                    text_size 22
+                    text_hover_color "#2c465e"
+            #Japanese
+            frame:
+                yalign 0.5
+                background Solid("#ffffff" if lang == "JP" else "#555555")
+                xpadding 20
+                ypadding 10
+                
+                textbutton "Japanease":
+                    action NullAction()
+                    text_color ("#befbff" if lang == "JP" else "#ffffff")
+                    text_size 22
+                    text_hover_color "#2c465e"
+        #For Rayshift Fan Translation
+        frame:
+            xalign 0
+            xysize (400, 110)
+            xpadding 20
+            ypadding 15
+            
+            has hbox
+            yalign 0.5
+            spacing 25
+            text "Rayshift : ":
+                size 22
+                xalign 0.5
         textbutton "Close":
             action Hide("settings_screen")
             xalign 0.0
             text_color "#ffffff"
-            text_hover_color "#a9d6ff"
+            text_hover_color "#2c465e"
 
 screen reader_nav():
     zorder 100
@@ -468,8 +577,10 @@ screen title_menu():
     if titleScreen == "part1":
         add part1title:
             xysize (config.screen_width, config.screen_height) crop (20, 0, config.screen_width, config.screen_height)
-        add part1logo:
-            align (0.5, 0.25)
+        if lang == 'JP':
+            add part1logoJP align (0.5, 0.25)
+        else:
+            add part1logoNA align (0.5, 0.25)
     elif titleScreen == "part2":
         add part2title:
             xysize (config.screen_width*2, config.screen_height*2) crop (20, 0.0, config.screen_width, config.screen_height)
@@ -542,7 +653,7 @@ screen war_select():
         add part1terminal:
             align(config.screen_width,config.screen_height)
     elif titleScreen == "part2":
-        add part2terminal:
+        add part1terminal:
             align(config.screen_width,config.screen_height)
     tag menu
     modal True
@@ -564,27 +675,77 @@ screen war_select():
                 vbox:
                     for war in war_list:
                         # Show the Atlas banner as the war select button.
-                        $ title = war.get("longName") or war.get("name") or "Unnamed War"
-                        $ banner = war.get("banner")
-                        if banner:
-                            imagebutton:
-                                idle banner
-                                hover banner
-                                action [SetVariable("selected_war_id", war.get("id")), Return(True)]
-                                xsize 600
-                                ysize 120
-                        else:
-                            textbutton title:
-                                action [SetVariable("selected_war_id", war.get("id")), Return(True)]
-                                text_color "#000000"
-                        null height 8
+                        $ war_id = war.get("id")
+        
+                        if war_id and (war_id // 1000 >= 11) and (war_id % 1000 == 0):
+                            $ valueID =  war_id // 1000 - 10
+                            $ title = war.get("longName") or war.get("name") or "Unnamed War"
+                            $ banner = war.get("banner")
+                        
+                            if banner:
+                                imagebutton:
+                                    idle banner
+                                    hover banner
+                                    action Show("war_selectMainStory", target_id=valueID)
+                                    xsize 600
+                                    ysize 120
+                            else:
+                                textbutton title:
+                                    action Show("war_selectMainStory", target_id=valueID)
+                                    text_color "#000000"
+                            null height 8
                         
 
         hbox:
             spacing 16
             textbutton "Refresh" action [SetVariable("war_list", []), SetVariable("war_load_error", None), Return(False)]
             textbutton "Quit" action Quit(confirm=False)
+screen war_selectMainStory(target_id):
+    add Solid("#000000")
+    zorder 0
+    add part1terminal:
+        align(config.screen_width,config.screen_height)
+    tag menu
+    modal True
+    frame:
+        align (0.5, 0.5)
+        xpadding 20
+        ypadding 20
+        xmaximum 900
+        ymaximum 700
+        has vbox
 
+        text "Select a War" size 36
+
+        if war_load_error:
+            text war_load_error size 24 substitute False
+            textbutton "Retry" action Return(False)
+        else:
+            viewport id "war_list_view" mousewheel True draggable True:
+                vbox:
+                    for war in war_list:
+                        $ war_id = war.get("id")
+                        if war_id and (war_id // 100 == target_id ):
+                            $ title = war.get("longName") or war.get("name") or "Unnamed War"
+                            $ banner = war.get("banner")
+                        
+                            if banner:
+                                imagebutton:
+                                    idle banner
+                                    hover banner
+                                    action [SetVariable("selected_war_id", war_id), Return(True)]
+                                    xsize 600
+                                    ysize 120
+                            else:
+                                textbutton title:
+                                    action [SetVariable("selected_war_id",  war_id), Return(True)]
+                                    text_color "#000000"
+                            null height 8
+        hbox:
+            spacing 16
+            textbutton "Return" action Show("war_select")
+            textbutton "Refresh" action [SetVariable("war_list", []), SetVariable("war_load_error", None), Return(False)]
+            textbutton "Quit" action Quit(confirm=False)
 label start:
     $ menu_notice = ""
     call screen title_menu
@@ -698,12 +859,14 @@ label play_war:
                     while idx < len(phase_nodes):
                         $ node = phase_nodes[idx]
                         if node["type"] == "dialogue":
-                            $ speaker = node.get("speaker") or "Narrator"
+                            $ speaker = node.get("speaker") or ""
                             $ text = node.get("text") or ""
                             if text:
                                 $ music_flag = get_scene_music_flag(node, api)
                                 call apply_music_flag
                                 $ record_dialogue(speaker, text)
+                                $ last_speaker = speaker
+                                $ last_line = text
                                 call screen reader_dialogue(speaker, text)
                         elif node["type"] == "choice":
                             $ music_flag = get_scene_music_flag(node, api)
@@ -711,8 +874,39 @@ label play_war:
                             python:
                                 choice_options, next_idx = collect_choice_options(phase_nodes, idx)
                             if choice_options:
+                                show screen reader_dialogue_static(last_speaker, last_line)
                                 call screen reader_choice(choice_options)
+                                hide screen reader_dialogue_static
                             $ idx = next_idx - 1
+                        elif node["type"] == "choice_block":
+                            python:
+                                cb_choices = node.get("choices", [])
+                                cb_texts = [normalize_choice_text(c.get("text", "")) for c in cb_choices]
+                            if cb_texts:
+                                show screen reader_dialogue_static(last_speaker, last_line)
+                                call screen reader_choice(cb_texts)
+                                hide screen reader_dialogue_static
+                                python:
+                                    selected_branch_nodes = cb_choices[_return].get("nodes", []) if _return is not None and _return < len(cb_choices) else []
+                                $ branch_idx = 0
+                                while branch_idx < len(selected_branch_nodes):
+                                    $ branch_node = selected_branch_nodes[branch_idx]
+                                    if branch_node["type"] == "dialogue":
+                                        $ bspeaker = branch_node.get("speaker") or ""
+                                        $ btext = branch_node.get("text") or ""
+                                        if btext:
+                                            $ music_flag = get_scene_music_flag(branch_node, api)
+                                            call apply_music_flag
+                                            $ record_dialogue(bspeaker, btext)
+                                            $ last_speaker = bspeaker
+                                            $ last_line = btext
+                                            call screen reader_dialogue(bspeaker, btext)
+                                    else:
+                                        $ music_flag = get_scene_music_flag(branch_node, api)
+                                        call apply_music_flag
+                                        if not music_flag and apply_reader_node(branch_node, api):
+                                            show screen vn_stage(current_background_path, current_scene_id, current_characters)
+                                    $ branch_idx += 1
                         else:
                             $ music_flag = get_scene_music_flag(node, api)
                             call apply_music_flag
@@ -746,12 +940,14 @@ label play_war:
     while idx < len(active_war["script_nodes"]):
         $ node = active_war["script_nodes"][idx]
         if node["type"] == "dialogue":
-            $ speaker = node.get("speaker") or "Narrator"
+            $ speaker = node.get("speaker") or ""
             $ text = node.get("text") or ""
             if text:
                 $ music_flag = get_scene_music_flag(node, api)
                 call apply_music_flag
                 $ record_dialogue(speaker, text)
+                $ last_speaker = speaker
+                $ last_line = text
                 call screen reader_dialogue(speaker, text)
         elif node["type"] == "choice":
             $ music_flag = get_scene_music_flag(node, api)
@@ -759,8 +955,39 @@ label play_war:
             python:
                 choice_options, next_idx = collect_choice_options(active_war["script_nodes"], idx)
             if choice_options:
+                show screen reader_dialogue_static(last_speaker, last_line)
                 call screen reader_choice(choice_options)
+                hide screen reader_dialogue_static
             $ idx = next_idx - 1
+        elif node["type"] == "choice_block":
+            python:
+                cb_choices = node.get("choices", [])
+                cb_texts = [normalize_choice_text(c.get("text", "")) for c in cb_choices]
+            if cb_texts:
+                show screen reader_dialogue_static(last_speaker, last_line)
+                call screen reader_choice(cb_texts)
+                hide screen reader_dialogue_static
+                python:
+                    selected_branch_nodes = cb_choices[_return].get("nodes", []) if _return is not None and _return < len(cb_choices) else []
+                $ branch_idx = 0
+                while branch_idx < len(selected_branch_nodes):
+                    $ branch_node = selected_branch_nodes[branch_idx]
+                    if branch_node["type"] == "dialogue":
+                        $ bspeaker = branch_node.get("speaker") or ""
+                        $ btext = branch_node.get("text") or ""
+                        if btext:
+                            $ music_flag = get_scene_music_flag(branch_node, api)
+                            call apply_music_flag
+                            $ record_dialogue(bspeaker, btext)
+                            $ last_speaker = bspeaker
+                            $ last_line = btext
+                            call screen reader_dialogue(bspeaker, btext)
+                    else:
+                        $ music_flag = get_scene_music_flag(branch_node, api)
+                        call apply_music_flag
+                        if not music_flag and apply_reader_node(branch_node, api):
+                            show screen vn_stage(current_background_path, current_scene_id, current_characters)
+                    $ branch_idx += 1
         else:
             $ music_flag = get_scene_music_flag(node, api)
             call apply_music_flag

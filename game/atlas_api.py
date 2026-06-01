@@ -2,6 +2,7 @@ import json
 import ssl
 import urllib.parse
 import urllib.request
+import os
 from urllib.error import HTTPError, URLError
 
 from cache import CacheManager
@@ -9,12 +10,19 @@ from fgo_parser import parse_script_text
 
 
 class AtlasAPI:
+    _base_dir = os.path.dirname(__file__)
+    _config_path = os.path.join(_base_dir, 'config.json')
+
+    with open(_config_path, 'r', encoding='utf-8') as file:
+            config = json.load(file)
+    lang = config.get('language', 'NA')
+    rayshift = config.get('Rayshift','Yes')
     API_BASE_URL = "https://api.atlasacademy.io"
     STATIC_BASE_URL = "https://static.atlasacademy.io"
-    EXPORT_WAR_LIST_PATH = "export/NA/nice_war.json"
-    EXPORT_BGM_LIST_PATH = "export/NA/nice_bgm.json"
+    EXPORT_WAR_LIST_PATH = f"export/{lang}/nice_war.json"
+    EXPORT_BGM_LIST_PATH = f"export/{lang}/nice_bgm.json"
 
-    def __init__(self, region: str = "NA", lang: str = "en"):
+    def __init__(self, region: str = lang, lang: str = "en"):
         self.region = region
         self.lang = lang
         self.cache = CacheManager()
@@ -173,6 +181,22 @@ class AtlasAPI:
             return None
         url = f"{self.STATIC_BASE_URL}/{self.region}/CharaFigure/{chara_id}/{chara_id}_merged.png"
         return self.get_cached_asset(url, force_refresh=force_refresh)
+
+    def get_chara_script_offsets(self, chara_id: str, force_refresh: bool = False):
+        if not chara_id:
+            return None
+        url = self._build_url("raw/JP/svtScript", {"charaId": str(chara_id)})
+        data = self.fetch_json(url, force_refresh)
+        if not data or not isinstance(data, list):
+            return None
+        entry = next((e for e in data if e.get("id") == 0), data[0])
+        return {
+            "face_x": entry.get("faceX", 0),
+            "face_y": entry.get("faceY", 0),
+            "offset_x": entry.get("offsetX", 0),
+            "offset_y": entry.get("offsetY", 0),
+            "scale": entry.get("scale", 1)
+        }
 
     def get_bgm_path(self, bgm_name: str, force_refresh: bool = False):
         if not bgm_name:
