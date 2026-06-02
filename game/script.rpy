@@ -9,9 +9,6 @@ define original_screen_width = 1024
 define original_screen_height = 576
 define upscale_ratio = config.screen_width / original_screen_width
 
-#language selection
-#NA for english,JP for japanese 
-define lang = 'NA' 
 # reader_dialogue screen variables
 define dialogue_default_color = '#ffffff'
 define dialogue_textbox_width = int(1024 * upscale_ratio)
@@ -69,7 +66,22 @@ image running_fou: # loading screen icon running
 
 
 init python:
+    import json
+    import os
     from atlas_api import AtlasAPI
+    # To read Config.json
+    configJSON = json.load(renpy.open_file('config.json'))
+    store.lang = configJSON.get('language', 'NA')
+    store.rayshift = configJSON.get('Rayshift','Yes')    
+    #config Updating function
+    def config_update(key,value):
+        config_path = os.path.join(config.gamedir, "config.json")
+        if os.path.exists(config_path):
+            with open(config_path, "r", encoding="utf-8") as file:
+                current_data = json.load(file)
+        current_data[key] = value
+        with open(config_path, "w", encoding="utf-8") as file:
+            json.dump(current_data, file, ensure_ascii=False, indent=4)
     
     def get_api():
         if not hasattr(renpy.store, "_atlas_api") or renpy.store._atlas_api is None:
@@ -517,7 +529,7 @@ screen settings_screen():
                 ypadding 10
                 
                 textbutton "English":
-                    action NullAction()
+                    action [SetVariable("lang", "NA"), Function(config_update, "language", "NA")]
                     text_color ("#befbff" if lang == "NA" else "#ffffff")
                     text_size 22
                     text_hover_color "#2c465e"
@@ -529,7 +541,7 @@ screen settings_screen():
                 ypadding 10
                 
                 textbutton "Japanease":
-                    action NullAction()
+                    action [SetVariable("lang", "JP"), Function(config_update, "language", "JP")]
                     text_color ("#befbff" if lang == "JP" else "#ffffff")
                     text_size 22
                     text_hover_color "#2c465e"

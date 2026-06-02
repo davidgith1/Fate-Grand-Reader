@@ -17,7 +17,9 @@ class CacheManager:
 
         with open(_config_path, 'r', encoding='utf-8') as file:
                 config = json.load(file)
+        
         lang = config.get('language', 'NA')
+        
         if renpy is not None:
             game_dir = renpy.config.gamedir
         else:
