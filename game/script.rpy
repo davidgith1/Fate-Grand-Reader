@@ -41,7 +41,7 @@ define SPEED = 0.5
 
 # Title Screens
 # These should change by part
-define titleScreen = "part1" #so far part1 and part2 are only done
+#define titleScreen = "part1" #Transfer to config.json
 define part1title =  "gui/title_wallpaper.png"
 define part1logoNA = "gui/NAPart1Logo.png"
 define part1logoJP = "gui/JPPart1Logo.png"
@@ -73,6 +73,7 @@ init python:
     configJSON = json.load(renpy.open_file('config.json'))
     store.lang = configJSON.get('language', 'NA')
     store.rayshift = configJSON.get('Rayshift','Yes')    
+    store.titleScreen = configJSON.get('Title','Part1')
     #config Updating function
     def config_update(key,value):
         config_path = os.path.join(config.gamedir, "config.json")
@@ -586,14 +587,14 @@ screen reader_nav():
 screen title_menu():
     tag menu
     
-    if titleScreen == "part1":
+    if titleScreen == "Part1":
         add part1title:
             xysize (config.screen_width, config.screen_height) crop (20, 0, config.screen_width, config.screen_height)
         if lang == 'JP':
             add part1logoJP align (0.5, 0.25)
         else:
             add part1logoNA align (0.5, 0.25)
-    elif titleScreen == "part2":
+    elif titleScreen == "Part2":
         add part2title:
             xysize (config.screen_width*2, config.screen_height*2) crop (20, 0.0, config.screen_width, config.screen_height)
         add part2logo:
