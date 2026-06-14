@@ -432,22 +432,28 @@ screen settings_screen():
     add "gui/myRoom.png" xysize (config.screen_width, config.screen_height)
     add "gui/settings.png":
         xysize (config.screen_width,config.screen_height)
-        align (0.5, 0.5)
+        align (0.0, 0.5)
     modal True
     zorder 170
     
     frame:
         background None
-        align (0.5, 0.5)
+        style_prefix "navigation"
+        # Modified by 608
+        if renpy.get_screen("settings_screen"):
+            xalign 0.5
+        else:
+            xpos gui.navigation_xpos
+        yalign 0.5
         xysize (1100, 650)
         xpadding 22
         ypadding 18
         has vbox
         spacing 15
-        xalign 0.5
         text "Settings":
             color "#befbff"
-            xalign 0
+            xalign 1
+            
             size 34 
         #Music Row
         frame:
@@ -462,7 +468,7 @@ screen settings_screen():
             
             text "Music Volume : ":
                 size 22
-                xalign 0.5
+                xalign 0.0
             frame:
                 xalign 0.5
                 yalign 0.5
@@ -518,34 +524,38 @@ screen settings_screen():
             
             has hbox
             yalign 0.5
-            spacing 25
+            spacing 22
             text "Language : ":
                 size 22
-                xalign 0.5
+                xalign 0.0
             # English Language selector 
             frame:
-                yalign 0.5
-                background Solid("#ffffff" if lang == "NA" else "#555555")
-                xpadding 20
-                ypadding 10
-                
-                textbutton "English":
-                    action [SetVariable("lang", "NA"), Function(config_update, "language", "NA")]
-                    text_color ("#befbff" if lang == "NA" else "#ffffff")
-                    text_size 22
-                    text_hover_color "#2c465e"
+                fixed:
+                    yalign 0.5
+                    xysize (150, 60)  
+                    imagebutton:
+                        align (0.5, 0.5)
+                        idle ("gui/buttonActivate.png" if lang == "NA" else "gui/button.png")
+                        action [SetVariable("lang", "NA"), Function(config_update, "language", "NA")]
+                    
+                    text "English":
+                        align (0.5, 0.5)
+                        size 22
+                        color ("#befbff" if lang == "NA" else "#ffffff")
             #Japanese
             frame:
-                yalign 0.5
-                background Solid("#ffffff" if lang == "JP" else "#555555")
-                xpadding 20
-                ypadding 10
-                
-                textbutton "Japanease":
-                    action [SetVariable("lang", "JP"), Function(config_update, "language", "JP")]
-                    text_color ("#befbff" if lang == "JP" else "#ffffff")
-                    text_size 22
-                    text_hover_color "#2c465e"
+                fixed:
+                    yalign 0.5
+                    xysize (150, 60)  
+                    imagebutton:
+                        align (0.5, 0.5)
+                        idle ("gui/buttonActivate.png" if lang == "JP" else "gui/button.png")
+                        action [SetVariable("lang", "NA"), Function(config_update, "language", "JP")]
+                    
+                    text "Japanese":
+                        align (0.5, 0.5)
+                        size 22
+                        color ("#befbff" if lang == "JP" else "#ffffff")
         #For Rayshift Fan Translation
         frame:
             xalign 0
@@ -558,7 +568,7 @@ screen settings_screen():
             spacing 25
             text "Rayshift : ":
                 size 22
-                xalign 0.5
+                xalign 0.0
         textbutton "Close":
             action Hide("settings_screen")
             xalign 0.0
