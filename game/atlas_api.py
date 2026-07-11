@@ -217,6 +217,28 @@ class AtlasAPI:
 
     def get_story_quests(self, war_data: dict):
         story_quests = []
+        
+        # Add the intro Script
+        opening_script = war_data.get("script")
+        opening_script_id = war_data.get("scriptId")
+        if opening_script is not None and opening_script_id is not "NONE":
+            story_quests.append(
+                {
+                    "id": int(str(war_data.get("targetId"))[:-2]),
+                    "name": war_data.get("name") or "Unnamed Quest",
+                    "warLongName": war_data.get("longName") or war_data.get("name") or "",
+                    "spotName": war_data.get("longName") or war_data.get("name") or "",
+                    "chapterId": 1,
+                    "chapterSubId": 1,
+                    "priority": 0,
+                    "phase_scripts": [{
+                                "phase": 1,
+                                "scriptId": opening_script_id,
+                                "script": opening_script,
+                            }],
+                }
+            )
+
         for spot in war_data.get("spots", []):
             for quest in spot.get("quests", []):
                 if quest.get("type") != "main":
