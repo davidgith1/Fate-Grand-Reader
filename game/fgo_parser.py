@@ -94,6 +94,13 @@ def _parse_command_node(token: str):
             "slot": token_parts[1],
             "tags": {"charaFadeout": token},
         }
+    if command == "charafilter" and len(token_parts) >= 2:
+        return {
+            "type": "chara_filter",
+            "slot": token_parts[1],
+            "filter": token_parts[2],
+            "tags": {"charaFilter": token},
+        }
     return None
 
 
