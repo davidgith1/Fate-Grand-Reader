@@ -146,7 +146,8 @@ init python:
                         "face_y": data.get("face_y", 0),
                         "offset_x": data.get("offset_x", 0),
                         "offset_y": data.get("offset_y", 0),
-                        "scale": data.get("scale", 1)
+                        "scale": data.get("scale", 1),
+                        "matrixcolor": data.get("matrixcolor", None)
                     }
                 )
         renpy.store.current_characters = visible
@@ -186,7 +187,8 @@ init python:
                     "face_y": offsets.get("face_y"),
                     "offset_x": offsets.get("offset_x"),
                     "offset_y": offsets.get("offset_y"),
-                    "scale": offsets.get("scale")
+                    "scale": offsets.get("scale"),
+                    "matrixcolor": 0
                 }
                 refresh_visible_characters()
             return True
@@ -209,6 +211,13 @@ init python:
             slot = node.get("slot")
             if slot and slot in renpy.store.current_chara_defs:
                 renpy.store.current_chara_defs[slot]["visible"] = False
+                refresh_visible_characters()
+            return True
+        if node_type == "chara_filter":
+            slot = node.get("slot")
+            chara_filter = node.get("filter")
+            if slot and slot in renpy.store.current_chara_defs and chara_filter == "silhouette":
+                renpy.store.current_chara_defs[slot]["matrixcolor"] = -1
                 refresh_visible_characters()
             return True
         return False
@@ -325,9 +334,9 @@ screen vn_stage(background_path, scene_id, characters):
             xysize (original_screen_width, original_screen_height)
             yalign 1.0
             # TODO: Unsure about the character-individual scaling here, would need to find a character whose scale value isn't 1 to test
-            add chara["path"] crop (0, 0, 1024 * chara["scale"], 768 * chara["scale"]) xpos chara["position_offset"] + chara["offset_x"] ypos -chara["offset_y"]
+            add chara["path"] crop (0, 0, 1024 * chara["scale"], 768 * chara["scale"]) xpos chara["position_offset"] + chara["offset_x"] ypos -chara["offset_y"] matrixcolor BrightnessMatrix( + chara["matrixcolor"])
             if chara["face"] != "0" and chara["face"] != 0:
-                add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["position_offset"] + chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"]
+                add chara["path"] crop chara_face_crop(chara["face"]) xpos chara["position_offset"] + chara["face_x"] + chara["offset_x"] ypos chara["face_y"] - chara["offset_y"] matrixcolor BrightnessMatrix( + chara["matrixcolor"])
 
     if scene_id and not background_path:
         frame:

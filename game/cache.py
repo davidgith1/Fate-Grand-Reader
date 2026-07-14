@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import urllib.parse
+from pathlib import Path
 
 try:
     import renpy
@@ -24,6 +25,7 @@ class CacheManager:
             game_dir = renpy.config.gamedir
         else:
             game_dir = os.path.dirname(__file__)
+        self.game_dir = game_dir
         self.base_dir = os.path.join(game_dir, "cache", lang)
         self.atlas_dir = os.path.join(self.base_dir,"atlas_academy")
         self.json_dir = os.path.join(self.atlas_dir, "json")
@@ -75,7 +77,7 @@ class CacheManager:
         parsed = urllib.parse.urlparse(url)
         ext = os.path.splitext(parsed.path)[1] or ".bin"
         path = self._file_path(url, self.asset_dir, ext)
-        return path if os.path.exists(path) else None
+        return str(Path(path).relative_to(self.game_dir)) if os.path.exists(path) else None
 
     def save_asset(self, url: str, content: bytes):
         parsed = urllib.parse.urlparse(url)
@@ -83,4 +85,4 @@ class CacheManager:
         path = self._file_path(url, self.asset_dir, ext)
         with open(path, "wb") as fp:
             fp.write(content)
-        return path
+        return str(Path(path).relative_to(self.game_dir))
